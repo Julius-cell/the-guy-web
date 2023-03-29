@@ -3,15 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "main": "./src/main.tsx",
+  "types": "./src/main.tsx",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build"
   },
   "dependencies": {
+    "install": "^0.13.0",
+    "pnpm": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -29,7 +29,11 @@
     "@vitejs/plugin-react": "^3.1.0",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.0-rc.8",
+    "tsconfig": "workspace:*",
     "typescript": "^4.9.3",
     "vite": "^4.2.0"
+  },
+  "engines": {
+    "node": "16"
   }
 }
