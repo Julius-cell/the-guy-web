@@ -63,13 +63,18 @@ importers:
       '@types/react': ^18.0.28
       '@types/react-dom': ^18.0.11
       '@vitejs/plugin-react': ^3.1.0
+      install: ^0.13.0
+      pnpm: ^8.0.0
       prop-types: ^15.8.1
       react: ^18.2.0
       react-dom: ^18.2.0
       storybook: ^7.0.0-rc.8
+      tsconfig: workspace:*
       typescript: ^4.9.3
       vite: ^4.2.0
     dependencies:
+      install: 0.13.0
+      pnpm: 8.0.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
@@ -86,6 +91,7 @@ importers:
       '@vitejs/plugin-react': 3.1.0_vite@4.2.1
       prop-types: 15.8.1
       storybook: 7.0.0-rc.8
+      tsconfig: link:../tsconfig
       typescript: 4.9.5
       vite: 4.2.1
 
@@ -6885,6 +6891,11 @@ packages:
     resolution: {integrity: sha512-7NXolsK4CAS5+xvdj5OMMbI962hU/wvwoxk+LWR9Ek9bVtyuuYScDN6eS0rUm6TxApFpw7CX1o4uJzcd4AyD3Q==}
     dev: true
 
+  /install/0.13.0:
+    resolution: {integrity: sha512-zDml/jzr2PKU9I8J/xyZBQn8rPCAY//UOYNmR01XwNwyfhEWObo2SWfSl1+0tm1u6PhxLwDnfsT/6jB7OUxqFA==}
+    engines: {node: '>= 0.10'}
+    dev: false
+
   /internal-slot/1.0.5:
     resolution: {integrity: sha512-Y+R5hJrzs52QCG2laLn4udYVnxsfny9CpOhNhUvk/SSSVyF6T27FzRbF0sroPidSu3X8oEAkOn2K804mjpt6UQ==}
     engines: {node: '>= 0.4'}
@@ -8620,6 +8631,12 @@ packages:
     dependencies:
       find-up: 5.0.0
     dev: true
+
+  /pnpm/8.0.0:
+    resolution: {integrity: sha512-Crsvd8LKb+SoEB/bQxRZrtSt5Ri8g9jmPg6MKyexMTI1pdLd44gPwVV6cZLq2jYYPv5q+gADPkYTbYr8SeFCeA==}
+    engines: {node: '>=16.14'}
+    hasBin: true
+    dev: false
 
   /polished/4.2.2:
     resolution: {integrity: sha512-Sz2Lkdxz6F2Pgnpi9U5Ng/WdWAUZxmHrNPoVlm3aAemxoy2Qy7LGjQg4uf8qKelDAUW94F4np3iH2YPf2qefcQ==}
