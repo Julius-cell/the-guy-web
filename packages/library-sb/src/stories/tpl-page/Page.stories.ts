@@ -1,7 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import { within, userEvent } from '@storybook/testing-library';
 
 import { Page } from './Page';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
   title: 'Example/Page',
@@ -21,7 +22,7 @@ export const LoggedOut: Story = {};
 export const LoggedIn: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const loginButton = await canvas.getByRole('button', {
+    const loginButton = canvas.getByRole('button', {
       name: /Log in/i,
     });
     await userEvent.click(loginButton);
