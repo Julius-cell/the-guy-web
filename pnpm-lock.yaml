@@ -17,12 +17,14 @@ importers:
       '@types/react': ^18.0.28
       '@types/react-dom': ^18.0.11
       '@vitejs/plugin-react': ^3.1.0
+      eslint-config-custom: workspace:*
       library-sb: workspace:*
       react: ^18.2.0
       react-dom: ^18.2.0
       typescript: ^4.9.3
       vite: ^4.2.0
     dependencies:
+      eslint-config-custom: link:../../packages/eslint-config-custom
       library-sb: link:../../packages/library-sb
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -45,7 +47,7 @@ importers:
       eslint: 7.32.0
       eslint-config-next: 13.0.0_jofidmxrjzhj7l6vknpw5ecvfe
       eslint-config-prettier: 8.8.0_eslint@7.32.0
-      eslint-config-turbo: 1.8.6_eslint@7.32.0
+      eslint-config-turbo: 1.8.8_eslint@7.32.0
       eslint-plugin-react: 7.31.8_eslint@7.32.0
     devDependencies:
       typescript: 4.9.5
@@ -105,24 +107,6 @@ importers:
 
   packages/tsconfig:
     specifiers: {}
-
-  packages/ui:
-    specifiers:
-      '@types/react': ^18.0.17
-      '@types/react-dom': ^18.0.6
-      eslint: ^7.32.0
-      eslint-config-custom: workspace:*
-      react: ^18.2.0
-      tsconfig: workspace:*
-      typescript: ^4.5.2
-    devDependencies:
-      '@types/react': 18.0.29
-      '@types/react-dom': 18.0.11
-      eslint: 7.32.0
-      eslint-config-custom: link:../eslint-config-custom
-      react: 18.2.0
-      tsconfig: link:../tsconfig
-      typescript: 4.9.5
 
 packages:
 
@@ -5757,13 +5741,13 @@ packages:
       eslint: 7.32.0
     dev: false
 
-  /eslint-config-turbo/1.8.6_eslint@7.32.0:
-    resolution: {integrity: sha512-LSMqrHmFeQcYRuBnzrzw+B2bJ3+o8wxPkRwfK0Y+SSLsq2F/niRJ2kqB8j4uOSCfxybHHpFEB2CgUpQiiyfeoQ==}
+  /eslint-config-turbo/1.8.8_eslint@7.32.0:
+    resolution: {integrity: sha512-+yT22sHOT5iC1sbBXfLIdXfbZuiv9bAyOXsxTxFCWelTeFFnANqmuKB3x274CFvf7WRuZ/vYP/VMjzU9xnFnxA==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
       eslint: 7.32.0
-      eslint-plugin-turbo: 1.8.6_eslint@7.32.0
+      eslint-plugin-turbo: 1.8.8_eslint@7.32.0
     dev: false
 
   /eslint-import-resolver-node/0.3.7:
@@ -5941,8 +5925,8 @@ packages:
       - typescript
     dev: true
 
-  /eslint-plugin-turbo/1.8.6_eslint@7.32.0:
-    resolution: {integrity: sha512-LieXzur+4XtIsLst8GdupTMhvGn2ebFetG3AVErh2jHBy1EobPHbatjcdNZQMy5EsdG35axQVB8KFF3jo4u+OQ==}
+  /eslint-plugin-turbo/1.8.8_eslint@7.32.0:
+    resolution: {integrity: sha512-zqyTIvveOY4YU5jviDWw9GXHd4RiKmfEgwsjBrV/a965w0PpDwJgEUoSMB/C/dU310Sv9mF3DSdEjxjJLaw6rA==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
