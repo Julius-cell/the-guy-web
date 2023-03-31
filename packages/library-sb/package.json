@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
-    "lint": "eslint src/stories/*/*.ts*"
+    "lint": "eslint ."
   },
   "dependencies": {
     "eslint-config-custom": "workspace:*",
