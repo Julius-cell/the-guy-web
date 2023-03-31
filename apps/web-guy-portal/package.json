@@ -12,7 +12,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "library-sb": "workspace:*",
-    "eslint-config-custom": "workspace:*"
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
