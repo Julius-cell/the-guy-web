@@ -25,7 +25,7 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'import', 'autofix'],
   rules: {
     '@typescript-eslint/no-unused-vars': 'error',
-    "@typescript-eslint/await-thenable": "warn",
+    '@typescript-eslint/await-thenable': 'warn',
     '@typescript-eslint/consistent-type-imports': 'warn',
     'react/react-in-jsx-scope': 'off',
     'arrow-body-style': ['error', 'as-needed'],
