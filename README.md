@@ -24,6 +24,7 @@ This turborepo has some additional tools already setup for you:
 - [CommitLint](https://commitlint.js.org/#/) for add a commit convention
 - [Prettier](https://prettier.io/) for formatting the code
 - [Husky](https://typicode.github.io/husky/#/) for adding hooks
+- [Tailwind](https://tailwindcss.com/) utility-first CSS framework
 
 ### Build
 
@@ -36,11 +37,20 @@ pnpm run build
 
 ### Develop
 
-To develop all apps and packages, run the following command:
+To develop all apps, run the following command:
 
 ```
 cd my-turborepo
 pnpm run dev
+```
+
+### Storybook Library
+
+To open the storybook library, run the following commands:
+
+```
+cd my-turborepo > cd packages > cd library-sb
+npm run storybook
 ```
 
 ### Remote Caching
