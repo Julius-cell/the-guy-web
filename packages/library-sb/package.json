@@ -4,20 +4,7 @@
   "version": "0.0.0",
   "main": "./src/main.tsx",
   "type": "module",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/react-component-library.cjs",
-      "import": "./dist/react-component-library.es.js"
-    },
-    "./styles.css": {
-      "require": "./dist/styles.css",
-      "default": "./dist/styles.css"
-    }
-  },
-  "files": [
-    "dist"
-  ],
+  "types": "./src/main.tsx",
   "scripts": {
     "storybook": "concurrently \"npm run storybook:css\" \"storybook dev -p 6006\"",
     "storybook:css": "tailwindcss -w -i ./src/tailwind-entry.css -o ./src/index.css",
