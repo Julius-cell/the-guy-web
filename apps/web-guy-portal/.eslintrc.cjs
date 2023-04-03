@@ -10,7 +10,6 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'eslint-config-prettier',
-    "plugin:import/recommended"
   ],
   // Specifying Parser
   parser: "@typescript-eslint/parser",
