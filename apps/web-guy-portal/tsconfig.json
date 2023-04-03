@@ -1,6 +1,9 @@
 {
   "extends": "tsconfig/react-library.json",
-  "compilerOptions": {},
+  "compilerOptions": {
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+  },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

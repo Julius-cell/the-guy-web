@@ -1,6 +1,14 @@
 {
   "extends": "tsconfig/react-library.json",
-  "compilerOptions": {},
+  "compilerOptions": {
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "library-sb": ["src/index.ts"],
+    },
+    "typeRoots": ["node_modules/@types", "src/index.d.ts"]
+  },
   "include": ["./src"],
   "exclude": ["./src/stories/**/*.stories.*"],
   "references": [{ "path": "./tsconfig.node.json" }]
