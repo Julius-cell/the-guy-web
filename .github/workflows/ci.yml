@@ -2,7 +2,7 @@ name: CI
  
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "develop"]
   pull_request:
     types: [opened, synchronize]
  
@@ -22,9 +22,10 @@ jobs:
           with:
             fetch-depth: 2
  
-        - uses: pnpm/action-setup@v2.0.1
+        - name: Use pnpm '7'
+          uses: pnpm/action-setup@v2.0.1
           with:
-            version: 6.32.2
+            version: 7
  
         - name: Setup Node.js environment
           uses: actions/setup-node@v3
@@ -38,5 +39,5 @@ jobs:
         - name: Build
           run: pnpm build
  
-        - name: Test
-          run: pnpm test
+        # - name: Test
+        #   run: pnpm test

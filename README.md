@@ -1,6 +1,6 @@
-# Turborepo starter
+# The Web Guy
 
-This is an official pnpm starter turborepo.
+This is the officiall library and portal for my ultimate portfolio.
 
 ## What's inside?
 
@@ -8,13 +8,10 @@ This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes th
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
+- `web-guy-portal`: another [Next.js](https://nextjs.org/) app
+- `library-sb`: a stub React component library (storybook) shared by both `web-guy-portal` application
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
 ### Utilities
 
@@ -23,6 +20,11 @@ This turborepo has some additional tools already setup for you:
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
+- [Storybook](https://storybook.js.org/) for components building
+- [CommitLint](https://commitlint.js.org/#/) for add a commit convention
+- [Prettier](https://prettier.io/) for formatting the code
+- [Husky](https://typicode.github.io/husky/#/) for adding hooks
+- [Tailwind](https://tailwindcss.com/) utility-first CSS framework
 
 ### Build
 
@@ -35,11 +37,20 @@ pnpm run build
 
 ### Develop
 
-To develop all apps and packages, run the following command:
+To develop all apps, run the following command:
 
 ```
 cd my-turborepo
 pnpm run dev
+```
+
+### Storybook Library
+
+To open the storybook library, run the following commands:
+
+```
+cd my-turborepo > cd packages > cd library-sb
+npm run storybook
 ```
 
 ### Remote Caching
