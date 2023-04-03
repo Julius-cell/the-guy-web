@@ -1,7 +1,7 @@
 {
   "extends": "tsconfig/react-library.json",
   "compilerOptions": {},
-  "include": ["./src/stories/**/*.ts*"],
+  "include": ["./src"],
   "exclude": ["./src/stories/**/*.stories.*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
