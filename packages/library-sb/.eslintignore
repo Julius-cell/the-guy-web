@@ -3,3 +3,4 @@ dist/
 *.js
 *.cjs
 vite.config.ts
+src/stories/**/*.stories.*

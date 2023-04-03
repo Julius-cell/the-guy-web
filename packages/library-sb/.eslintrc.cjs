@@ -13,19 +13,20 @@ module.exports = {
     'plugin:storybook/recommended',
   ],
   overrides: [],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-  },
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    },
+    ecmaVersion: 'latest',
+    sourceType: 'module',
     project: true,
     tsconfigRootDir: __dirname,
   },
   plugins: ['react', '@typescript-eslint', 'import', 'autofix'],
   rules: {
     '@typescript-eslint/no-unused-vars': 'error',
-    '@typescript-eslint/await-thenable': 'warn',
+    // '@typescript-eslint/await-thenable': 'warn',
     '@typescript-eslint/consistent-type-imports': 'warn',
     'react/react-in-jsx-scope': 'off',
     'arrow-body-style': ['error', 'as-needed'],
