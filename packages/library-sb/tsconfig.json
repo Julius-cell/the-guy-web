@@ -5,7 +5,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "library-sb": ["src/index.ts"],
+      "library-sb": ["src/index.ts"]
     },
     "typeRoots": ["node_modules/@types", "src/index.d.ts"]
   },

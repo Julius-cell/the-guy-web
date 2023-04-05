@@ -12,39 +12,36 @@ module.exports = {
     'eslint-config-prettier',
   ],
   // Specifying Parser
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
     project: true,
-    tsconfigRootDir: __dirname
+    tsconfigRootDir: __dirname,
   },
   // Configuring third-party plugins
-  plugins: [
-    "react",
-    "@typescript-eslint"
-  ],
+  plugins: ['react', '@typescript-eslint'],
   // Resolve imports
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       typescript: {
-        project: "./tsconfig.json"
-      }
+        project: './tsconfig.json',
+      },
     },
     react: {
-      version: "18.x"
-    }
+      version: '18.x',
+    },
   },
   rules: {
-    "linebreak-style": "off",
+    'linebreak-style': 'off',
     // Disallow the `any` type.
-    "@typescript-eslint/no-explicit-any": "warn",
-    "react-hooks/exhaustive-deps": "off",
+    '@typescript-eslint/no-explicit-any': 'warn',
+    'react-hooks/exhaustive-deps': 'off',
     // Enforce the use of the shorthand syntax.
-    "object-shorthand": "error",
-    "no-console": "warn"
-  }
-}
+    'object-shorthand': 'error',
+    'no-console': 'warn',
+  },
+};
