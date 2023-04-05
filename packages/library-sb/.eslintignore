@@ -4,3 +4,4 @@ dist/
 *.cjs
 vite.config.ts
 src/stories/**/*.stories.*
+storybook-static

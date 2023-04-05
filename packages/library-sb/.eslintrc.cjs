@@ -16,7 +16,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -30,6 +30,7 @@ module.exports = {
     '@typescript-eslint/consistent-type-imports': 'warn',
     'react/react-in-jsx-scope': 'off',
     'arrow-body-style': ['error', 'as-needed'],
+    'no-console': 'error',
     'react/self-closing-comp': [
       'error',
       {
