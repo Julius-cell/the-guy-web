@@ -1,17 +1,15 @@
-name: CI
+name: Build web-guy-portal
 
 on:
   push:
     branches: ['main', 'develop']
-  pull_request:
-    types: [opened, synchronize]
 
 jobs:
-  build:
-    name: Build and Test
+  build-portal:
+    name: Build Portal
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    # To use Remote Caching, uncomment the next lines and follow the steps below.
+    # To use Remote Caching.
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
@@ -35,9 +33,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
+        working-directory: ./apps/web-guy-portal
 
       - name: Build
-        run: pnpm build
-
-      # - name: Test
-      #   run: pnpm test
+        run: |
+          npm run build
+        working-directory: ./apps/web-guy-portal
