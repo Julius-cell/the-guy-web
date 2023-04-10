@@ -1,7 +1,6 @@
 {
   "extends": "tsconfig/react-library.json",
   "compilerOptions": {
-    "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
