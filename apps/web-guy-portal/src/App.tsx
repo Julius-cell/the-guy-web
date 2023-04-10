@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 
-import { Button } from 'library-sb';
+import Page from './components/Page';
 
 function App() {
   return (
     <div className="App">
-      <Button label="Test" />
+      <Page />
     </div>
   );
 }
