@@ -5,7 +5,7 @@ import { Page } from './Page';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Example/Page',
+  title: 'Templates/tpl-page',
   component: Page,
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/7.0/react/configure/story-layout
