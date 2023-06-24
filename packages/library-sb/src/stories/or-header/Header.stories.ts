@@ -3,7 +3,7 @@ import { Header } from './Header';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Example/Header',
+  title: 'Organisms/or-header',
   component: Header,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/7.0/react/writing-docs/docs-page
   tags: ['autodocs'],
