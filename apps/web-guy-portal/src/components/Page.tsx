@@ -1,5 +1,4 @@
 import { Image } from 'library-sb';
-import React from 'react';
 
 const Page = () => {
   return (
