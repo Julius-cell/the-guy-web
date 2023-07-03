@@ -1,26 +1,32 @@
 {
   "name": "web-guy-portal",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "dotenv -- vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint ."
   },
   "dependencies": {
+    "@types/node": "^20.3.1",
+    "contentful": "^10.3.0",
+    "eslint-config-custom": "workspace:*",
+    "library-sb": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "library-sb": "workspace:*",
-    "eslint-config-custom": "workspace:*",
-    "tsconfig": "workspace:*"
+    "react-markdown": "^8.0.7",
+    "react-router-dom": "^6.14.0",
+    "tsconfig": "workspace:*",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
     "typescript": "^4.9.3",
-    "vite": "^4.2.0"
+    "vite": "^4.2.0",
+    "dotenv-cli": "latest"
   }
 }
