@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Cambo-regular';
+  src: url('./stories/assets/fonts/Cambo/Cambo-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto-regular';
+  src: url('./stories/assets/fonts/Roboto/Roboto-Regular.ttf');
+}
