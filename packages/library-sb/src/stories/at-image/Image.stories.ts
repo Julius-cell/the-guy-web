@@ -7,7 +7,9 @@ const meta = {
   component: Image,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/7.0/react/writing-docs/docs-page
   tags: ['autodocs'],
-  parameters: {},
+  parameters: {
+    layout: 'centered',
+  },
 } satisfies Meta<typeof Image>;
 
 export default meta;
@@ -15,7 +17,11 @@ type Story = StoryObj<typeof meta>;
 
 export const ImageDefault: Story = {
   args: {
-    image: '/black-and-white.jpeg',
+    desktopAsset: {
+      file: {
+        url: '/black-and-white.jpeg',
+      },
+    },
     altText: 'the-web-guy',
   },
 };
