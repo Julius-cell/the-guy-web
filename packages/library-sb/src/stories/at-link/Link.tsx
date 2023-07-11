@@ -1,4 +1,4 @@
-interface LinkProps {
+export interface LinkProps {
   title?: string;
   label?: string;
   actionType?: string;
@@ -6,10 +6,10 @@ interface LinkProps {
   subLinks?: LinkProps[];
 }
 
-export const Link = ({ label, actionUrl, actionType }: LinkProps) => {
+export const Link = (props: LinkProps) => {
   return (
-    <a href={actionUrl} target={actionType}>
-      {label}
+    <a href={props.actionUrl} target={props.actionType}>
+      {props.label}
     </a>
   );
 };

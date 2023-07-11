@@ -16,6 +16,39 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const LoggedIn: Story = {
-  args: {},
+export const HeaderDefault: Story = {
+  args: {
+    title: 'Header Home Page',
+    hero: {
+      title: 'Hero Home Page',
+      heroTitle: 'the-web-guy',
+      description: 'Transformando Ideas en atractivas experiencias on-line.',
+      heroAssets: [
+        {
+          altText: 'the-web-guy',
+          desktopAsset: {
+            file: {
+              // url: '/black-and-white.jpeg',
+            },
+          },
+        },
+      ],
+    },
+    categories: [
+      {
+        title: 'link default',
+        label: 'Home',
+        actionType: '_self',
+        actionUrl: '#',
+        subLinks: [],
+      },
+      {
+        title: 'link default',
+        label: 'About',
+        actionType: '_self',
+        actionUrl: '#',
+        subLinks: [],
+      },
+    ],
+  },
 };
