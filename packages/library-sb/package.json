@@ -8,7 +8,7 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build": "storybook build",
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {

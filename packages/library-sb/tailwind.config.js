@@ -4,6 +4,7 @@ export default {
   theme: {
     spacing: {
       10: '10px',
+      20: '20px',
     },
     fontFamily: {
       roboto: ['Roboto-regular', 'sans-serif'],
