@@ -3,6 +3,8 @@ export default {
   content: ['./src/stories/**/*.tsx'],
   theme: {
     spacing: {
+      0: '0px',
+      4: '4px',
       10: '10px',
       20: '20px',
     },

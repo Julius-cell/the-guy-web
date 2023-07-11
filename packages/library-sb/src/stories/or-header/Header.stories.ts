@@ -21,7 +21,7 @@ export const HeaderDefault: Story = {
     title: 'Header Home Page',
     hero: {
       title: 'Hero Home Page',
-      heroTitle: 'the-web-guy',
+      heroTitle: 'The Web Guy',
       description: 'Transformando Ideas en atractivas experiencias on-line.',
       heroAssets: [
         {

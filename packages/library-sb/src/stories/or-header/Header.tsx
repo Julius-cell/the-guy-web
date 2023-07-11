@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { ArrowSmallDownIcon } from '../assets/icons/arrow-small-down';
 import { Image } from '../at-image/Image';
 import { Link } from '../at-link/Link';
 
@@ -38,8 +39,17 @@ export const Header = ({ hero, categories }: HeaderProps) => {
           ))}
         </ul>
       </nav>
-      <div className="h-[90%] flex justify-center items-center">
-        <Image desktopAsset={heroImage} />
+
+      <div className="relative h-[90%] grid grid-cols-4">
+        <div className="col-start-2 col-span-2">
+          <Image className="aspect-square rounded-full " desktopAsset={heroImage} />
+
+          <div className="text-center mt-20 space-y-20">
+            <h1 className="font-roboto font-semibold text-2xl">{hero?.heroTitle}</h1>
+            <p className="font-cambo">{hero?.description}</p>
+            <ArrowSmallDownIcon className="absolute bottom-20 h-20 w-20 right-[calc(50%_-_10px)]" />
+          </div>
+        </div>
       </div>
     </header>
   );
