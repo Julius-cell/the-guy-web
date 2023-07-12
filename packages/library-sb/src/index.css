@@ -11,3 +11,15 @@
   font-family: 'Roboto-regular';
   src: url('./stories/assets/fonts/Roboto/Roboto-Regular.ttf');
 }
+
+@layer base {
+  h1,
+  h2,
+  h3 {
+    @apply font-roboto;
+    @apply font-bold;
+  }
+  p {
+    @apply font-cambo;
+  }
+}
