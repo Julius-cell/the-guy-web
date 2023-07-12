@@ -1,10 +1,4 @@
-export interface LinkProps {
-  title?: string;
-  label?: string;
-  actionType?: string;
-  actionUrl?: string;
-  subLinks?: LinkProps[];
-}
+import type { LinkProps } from 'types/components-type-props';
 
 export const Link = (props: LinkProps) => {
   return (

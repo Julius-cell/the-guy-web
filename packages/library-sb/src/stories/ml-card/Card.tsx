@@ -1,24 +1,4 @@
-import type { LinkProps } from '../at-link/Link';
-import type { MediaWrapperProps } from 'types/contentful-types';
-
-interface Person {
-  title?: string;
-  name?: string;
-  address?: string;
-  age?: number;
-  experience?: string;
-  phone?: string;
-  links?: LinkProps[];
-}
-
-interface CardProps {
-  title?: string;
-  cardTitle?: string;
-  description?: string;
-  link?: string;
-  image?: MediaWrapperProps;
-  personDetails?: Person;
-}
+import type { CardProps } from 'types/components-type-props';
 
 export const Card = ({ cardTitle, description, ...props }: CardProps) => {
   return (

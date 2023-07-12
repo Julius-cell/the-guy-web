@@ -1,11 +1,4 @@
-interface ButtonProps {
-  title?: string;
-  label?: string;
-  actionType?: 'self' | 'blank';
-  actionUrl?: string;
-  isPrimary?: boolean;
-  onClick?: () => void;
-}
+import type { ButtonProps } from 'types/components-type-props';
 
 export const Button = ({ label, isPrimary = false }: ButtonProps) => {
   return (
