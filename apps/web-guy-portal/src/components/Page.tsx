@@ -1,5 +1,4 @@
-import { Image } from 'library-sb';
-import blackAndWhite from '/public/black-and-white.jpeg';
+import { Header } from 'library-sb';
 import { useEffect, useState } from 'react';
 import { ContentfulPage, getPage } from '../contentful/get-page';
 
@@ -19,11 +18,7 @@ const Page = () => {
 
   return (
     <div>
-      <Image image={blackAndWhite} altText="the-web-guy" />
-      <h1>{page?.title}</h1>
-
-      <p>Portfolio v.0.1</p>
-      <p>2023</p>
+      <Header categories={page?.header?.categories} hero={page?.header?.hero} />
     </div>
   );
 };
