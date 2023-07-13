@@ -21,9 +21,7 @@ export const Header = ({ hero, categories }: HeaderProps) => {
       {/* Categories */}
       <nav className="h-[10%] px-20 py-10">
         <ul className="flex justify-end space-x-10">
-          {categories?.map((categorie, index) => (
-            <Link key={index} {...categorie} />
-          ))}
+          {categories?.map((categorie, index) => <Link key={index} {...categorie} />)}
         </ul>
       </nav>
 

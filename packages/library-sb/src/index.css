@@ -19,7 +19,8 @@
     @apply font-roboto;
     @apply font-bold;
   }
-  p {
+  p,
+  a {
     @apply font-cambo;
   }
 }
