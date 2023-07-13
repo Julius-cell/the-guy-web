@@ -4,21 +4,8 @@ import { ArrowSmallDownIcon } from '../assets/icons/arrow-small-down';
 import { Image } from '../at-image/Image';
 import { Link } from '../at-link/Link';
 
-import type { ContentfulAsset, MediaWrapperProps } from '../../../types/contentful-types';
-import type { LinkProps } from '../at-link/Link';
-
-interface HeroSectionProps {
-  title?: string;
-  heroTitle?: string;
-  description?: string;
-  heroAssets?: MediaWrapperProps[];
-}
-
-interface HeaderProps {
-  title?: string;
-  categories?: LinkProps[];
-  hero?: HeroSectionProps;
-}
+import type { HeaderProps } from '../../../types/components-type-props';
+import type { ContentfulAsset } from '../../../types/contentful-types';
 
 export const Header = ({ hero, categories }: HeaderProps) => {
   const [heroImage, setHeroImage] = useState<ContentfulAsset | undefined>(undefined);
