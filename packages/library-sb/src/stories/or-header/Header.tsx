@@ -4,8 +4,18 @@ import { ArrowSmallDownIcon } from '../assets/icons/arrow-small-down';
 import { Image } from '../at-image/Image';
 import { Link } from '../at-link/Link';
 
-import type { HeaderProps } from '../../../types/components-type-props';
+import type { HeaderProps, LinkProps } from '../../../types/components-type-props';
 import type { ContentfulAsset } from '../../../types/contentful-types';
+
+const NavBar = (props: { categories?: LinkProps[] }) => {
+  return (
+    <nav className="h-[10%] px-20 py-10 grid items-center">
+      <ul className="flex justify-end space-x-10">
+        {props.categories?.map((categorie, index) => <Link key={index} {...categorie} />)}
+      </ul>
+    </nav>
+  );
+};
 
 export const Header = ({ hero, categories }: HeaderProps) => {
   const [heroImage, setHeroImage] = useState<ContentfulAsset | undefined>(undefined);
@@ -14,20 +24,16 @@ export const Header = ({ hero, categories }: HeaderProps) => {
     if (hero?.heroAssets?.length) {
       setHeroImage(hero?.heroAssets[0].desktopAsset);
     }
-  }, []);
+  }, [hero?.heroAssets]);
 
   return (
     <header className="h-screen">
       {/* Categories */}
-      <nav className="h-[10%] px-20 py-10">
-        <ul className="flex justify-end space-x-10">
-          {categories?.map((categorie, index) => <Link key={index} {...categorie} />)}
-        </ul>
-      </nav>
+      {categories?.length ? <NavBar categories={categories} /> : <></>}
 
-      <div className="relative h-[90%] grid grid-cols-4">
-        <div className="col-start-2 col-span-2">
-          <Image className="aspect-square rounded-full " desktopAsset={heroImage} />
+      <div className={`relative grid grid-cols-4 ${categories?.length ? 'h-[90%]' : 'h-full'}`}>
+        <div className={`col-start-2 col-span-2 ${categories?.length ? 'mt-1/3' : 'mt-1/2'}`}>
+          <Image className="aspect-square rounded-full object-cover" desktopAsset={heroImage} />
 
           <div className="text-center mt-20 space-y-20">
             <h1 className="font-roboto font-semibold text-2xl">{hero?.heroTitle}</h1>
