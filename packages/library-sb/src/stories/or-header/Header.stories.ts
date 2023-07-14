@@ -28,7 +28,7 @@ export const HeaderDefault: Story = {
           altText: 'the-web-guy',
           desktopAsset: {
             file: {
-              // url: '/black-and-white.jpeg',
+              url: '/black-and-white.jpeg',
             },
           },
         },
