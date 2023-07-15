@@ -1,4 +1,4 @@
-import type { CardProps } from 'types/components-type-props';
+import type { CardProps } from '../../types/components-type-props';
 
 export const Card = ({ cardTitle, description, ...props }: CardProps) => {
   return (

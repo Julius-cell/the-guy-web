@@ -4,8 +4,8 @@ import { ArrowSmallDownIcon } from '../assets/icons/arrow-small-down';
 import { Image } from '../at-image/Image';
 import { Link } from '../at-link/Link';
 
-import type { HeaderProps, LinkProps } from '../../../types/components-type-props';
-import type { ContentfulAsset } from '../../../types/contentful-types';
+import type { HeaderProps, LinkProps } from '../../types/components-type-props';
+import type { ContentfulAsset } from '../../types/contentful-types';
 
 const NavBar = (props: { categories?: LinkProps[] }) => {
   return (
