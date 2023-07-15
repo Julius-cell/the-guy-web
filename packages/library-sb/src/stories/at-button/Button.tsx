@@ -1,4 +1,4 @@
-import type { ButtonProps } from 'types/components-type-props';
+import type { ButtonProps } from '../../types/components-type-props';
 
 export const Button = ({ label, isPrimary = false }: ButtonProps) => {
   return (

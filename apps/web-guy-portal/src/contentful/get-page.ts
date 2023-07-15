@@ -1,6 +1,6 @@
-import type { HeaderProps } from 'library-sb/types/components-type-props';
 import { createContentfulClient } from './client';
 import { normalizeContentfulEntry } from './normalize';
+import { HeaderProps } from 'library-sb';
 
 export interface ContentfulPage {
   title?: string;
