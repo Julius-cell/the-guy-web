@@ -12,8 +12,8 @@ const customViewports = {
   tablet: {
     name: 'MD (tablet)',
     styles: {
-      width: '768px',
-      height: '1024px',
+      width: '680px',
+      height: '960px',
     },
   },
   regular: {
