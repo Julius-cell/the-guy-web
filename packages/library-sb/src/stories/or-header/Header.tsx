@@ -32,8 +32,14 @@ export const Header = ({ hero, categories }: HeaderProps) => {
       {categories?.length ? <NavBar categories={categories} /> : <></>}
 
       <div className={`relative grid grid-cols-4 ${categories?.length ? 'h-[90%]' : 'h-full'}`}>
-        <div className={`col-start-2 col-span-2 ${categories?.length ? 'mt-1/3' : 'mt-1/2'}`}>
-          <Image className="aspect-square rounded-full object-cover" desktopAsset={heroImage} />
+        <div
+          className={`grid grid-rows-3 justify-items-center col-start-2 md:mt-[10%] col-span-2 ${
+            categories?.length ? 'mt-1/3 ' : 'mt-1/2'
+          }`}
+        >
+          <div className="aspect-square">
+            <Image className=" rounded-full " desktopAsset={heroImage} />
+          </div>
 
           <div className="text-center mt-20 space-y-20">
             <h1 className="font-roboto font-semibold text-2xl">{hero?.heroTitle}</h1>
