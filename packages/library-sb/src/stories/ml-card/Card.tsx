@@ -2,7 +2,7 @@ import type { CardProps } from '../../types/components-type-props';
 
 export const Card = ({ cardTitle, description, ...props }: CardProps) => {
   return (
-    <div>
+    <div className="p-20">
       <h2>{cardTitle}</h2>
       <p className="mt-20">{description}</p>
       <div className="mt-20 grid gap-20 grid-cols-2 border rounded p-20">
