@@ -1,28 +1,24 @@
-import type { MediaWrapperProps } from './contentful-types';
+import type { ContentfulContent, MediaWrapperProps } from './contentful-types';
 
-export interface HeaderProps {
-  title?: string;
+export interface HeaderProps extends ContentfulContent {
   categories?: LinkProps[];
   hero?: HeroSectionProps;
 }
 
-export interface HeroSectionProps {
-  title?: string;
+export interface HeroSectionProps extends ContentfulContent {
   heroTitle?: string;
   description?: string;
   heroAssets?: MediaWrapperProps[];
 }
 
-export interface LinkProps {
-  title?: string;
+export interface LinkProps extends ContentfulContent {
   label?: string;
   actionType?: string;
   actionUrl?: string;
   subLinks?: LinkProps[];
 }
 
-export interface CardProps {
-  title?: string;
+export interface CardProps extends ContentfulContent {
   cardTitle?: string;
   description?: string;
   link?: string;
@@ -30,8 +26,7 @@ export interface CardProps {
   personDetails?: Person;
 }
 
-export interface LinkProps {
-  title?: string;
+export interface LinkProps extends ContentfulContent {
   label?: string;
   actionType?: string;
   actionUrl?: string;
@@ -42,8 +37,7 @@ export interface ImageProps extends MediaWrapperProps {
   className?: string;
 }
 
-export interface ButtonProps {
-  title?: string;
+export interface ButtonProps extends ContentfulContent {
   label?: string;
   actionType?: 'self' | 'blank';
   actionUrl?: string;
@@ -51,8 +45,7 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
-interface Person {
-  title?: string;
+interface Person extends ContentfulContent {
   name?: string;
   address?: string;
   age?: number;
