@@ -1,27 +1,21 @@
-import { Image } from './Image';
+import { GridSection } from './Grid-section';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Atoms/at-image',
-  component: Image,
+  title: 'Organisms/or-card',
+  component: GridSection,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/7.0/react/writing-docs/docs-page
   tags: ['autodocs'],
   parameters: {
+    // More on how to position stories at: https://storybook.js.org/docs/7.0/react/configure/story-layout
     layout: 'centered',
   },
-} satisfies Meta<typeof Image>;
+} satisfies Meta<typeof GridSection>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const ImageDefault: Story = {
-  args: {
-    desktopAsset: {
-      file: {
-        url: '/black-and-white.jpeg',
-      },
-    },
-    altText: 'the-web-guy',
-  },
+export const GridSectionDefault: Story = {
+  args: {},
 };

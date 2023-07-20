@@ -1,47 +1,53 @@
-import { Button } from '../at-button/Button';
-import '../../index.css';
-import './header.css';
+import { useEffect, useState } from 'react';
 
-type User = {
-  name: string;
+import { ArrowSmallDownIcon } from '../assets/icons/arrow-small-down';
+import { Image } from '../at-image/Image';
+import { Link } from '../at-link/Link';
+
+import type { HeaderProps, LinkProps } from '../../types/components-type-props';
+import type { ContentfulAsset } from '../../types/contentful-types';
+
+const NavBar = (props: { categories?: LinkProps[] }) => {
+  return (
+    <nav className="h-[10%] px-20 py-10 grid items-center">
+      <ul className="flex justify-end space-x-10">
+        {props.categories?.map((categorie, index) => <Link key={index} {...categorie} />)}
+      </ul>
+    </nav>
+  );
 };
 
-interface HeaderProps {
-  user?: User;
-  onLogin: () => void;
-  onLogout: () => void;
-  onCreateAccount: () => void;
-}
+export const Header = ({ hero, categories }: HeaderProps) => {
+  const [heroImage, setHeroImage] = useState<ContentfulAsset | undefined>(undefined);
 
-export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) => (
-  <header>
-    <div className="wrapper">
-      <div>
-        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-          <g fill="none" fillRule="evenodd">
-            <path d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z" fill="#FFF" />
-            <path d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z" fill="#555AB9" />
-            <path d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z" fill="#91BAF8" />
-          </g>
-        </svg>
-        <h1>Acme</h1>
+  useEffect(() => {
+    if (hero?.heroAssets?.length) {
+      setHeroImage(hero?.heroAssets[0].desktopAsset);
+    }
+  }, [hero?.heroAssets]);
+
+  return (
+    <header className="h-screen">
+      {/* Categories */}
+      {categories?.length ? <NavBar categories={categories} /> : <></>}
+
+      <div className={`relative grid grid-cols-4 ${categories?.length ? 'h-[90%]' : 'h-full'}`}>
+        <div
+          className={`grid grid-rows-3 justify-items-center col-start-2 md:mt-[10%] col-span-2 ${
+            categories?.length ? 'mt-1/3 ' : 'mt-1/2'
+          }`}
+        >
+          <div className="aspect-square">
+            <Image className=" rounded-full " desktopAsset={heroImage} />
+          </div>
+
+          <div className="text-center mt-20 space-y-20">
+            <h1 className="font-roboto font-semibold text-2xl">{hero?.heroTitle}</h1>
+            <p className="font-cambo">{hero?.description}</p>
+            <ArrowSmallDownIcon className="absolute bottom-20 h-20 w-20 right-[calc(50%_-_10px)]" />
+          </div>
+        </div>
       </div>
-      <div>
-        {user ? (
-          <>
-            {/* snipped for brevity */}
-            <span className="welcome dark:text-white">
-              Welcome, <b>{user.name}</b>!
-            </span>
-            <Button size="small" onClick={onLogout} label="Log out" />
-          </>
-        ) : (
-          <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
-          </>
-        )}
-      </div>
-    </div>
-  </header>
-);
+    </header>
+  );
+};

@@ -1,13 +1,6 @@
+import { ContentfulPage } from '../types/page-types';
 import { createContentfulClient } from './client';
 import { normalizeContentfulEntry } from './normalize';
-
-export interface ContentfulPage {
-  title?: string;
-  baseUrl?: string;
-  header?: unknown;
-  modules?: unknown;
-  footer?: unknown;
-}
 
 export const getPage = async (): Promise<ContentfulPage | undefined> => {
   const entries = await createContentfulClient().getEntries({
