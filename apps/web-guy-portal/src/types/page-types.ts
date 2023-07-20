@@ -7,7 +7,3 @@ export interface ContentfulPage {
   modules?: CardProps[] | undefined;
   footer?: unknown;
 }
-
-export interface ModulesComponents {
-  [key: string]: React.ComponentType<any>;
-}

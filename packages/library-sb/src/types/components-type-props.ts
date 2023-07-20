@@ -1,5 +1,9 @@
 import type { ContentfulContent, MediaWrapperProps } from './contentful-types';
 
+export interface ModulesComponents {
+  [key: string]: React.ComponentType<any>;
+}
+
 export interface HeaderProps extends ContentfulContent {
   categories?: LinkProps[];
   hero?: HeroSectionProps;
@@ -11,11 +15,8 @@ export interface HeroSectionProps extends ContentfulContent {
   heroAssets?: MediaWrapperProps[];
 }
 
-export interface LinkProps extends ContentfulContent {
-  label?: string;
-  actionType?: string;
-  actionUrl?: string;
-  subLinks?: LinkProps[];
+export interface GridSectionProps extends ContentfulContent {
+  elements?: CardProps[];
 }
 
 export interface CardProps extends ContentfulContent {
