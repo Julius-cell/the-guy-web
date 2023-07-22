@@ -13,6 +13,12 @@
 }
 
 @layer base {
+  body {
+    @apply bg-primary-gradient;
+    @apply bg-dark-purple;
+    @apply text-white;
+  }
+
   h1,
   h2,
   h3 {
