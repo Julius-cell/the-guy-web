@@ -13,6 +13,14 @@ This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes th
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
+## Install packages
+
+From root directory
+
+- Add dependency package globally: `pnpm add -w <package>`
+- Add devDependency package globally: `pnpm add -Dw <package>`
+- Add devDependency package to specific project: `pnpm add -D <package> --filter <project>`
+
 ### Utilities
 
 This turborepo has some additional tools already setup for you:
