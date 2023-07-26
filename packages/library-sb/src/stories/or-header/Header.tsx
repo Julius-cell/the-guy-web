@@ -38,7 +38,10 @@ export const Header = ({ hero, categories }: HeaderProps) => {
           }`}
         >
           <div className="aspect-square">
-            <Image className=" rounded-full " desktopAsset={heroImage} />
+            <Image
+              className="rounded-full p-4 border-2 bg-gradient-to-r from-pink to-purple"
+              desktopAsset={heroImage}
+            />
           </div>
 
           <div className="text-center mt-20 space-y-20">
