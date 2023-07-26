@@ -31,13 +31,13 @@ export const GridSection = ({ elements }: GridSectionProps) => {
 
   const gridClassnameVariants = {
     one: 'grid grid-cols-1',
-    two: 'grid grid-cols-2',
+    two: 'grid grid-cols-1 md:grid-cols-2 gap-20',
   };
   const gridClassname = Object.values(gridClassnameVariants)[elements!.length - 1];
 
   return (
-    <main className={`min-h-screen items-center ${gridClassname}`}>
-      {modules ? renderModuleComponent(modules, moduleArgs) : <></>}
-    </main>
+    <div className={`mx-20 items-center ${gridClassname}`}>
+      {modules.length ? renderModuleComponent(modules, moduleArgs) : <></>}
+    </div>
   );
 };
