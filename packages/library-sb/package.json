@@ -23,6 +23,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@contentful/rich-text-react-renderer": "^15.17.0",
+    "@contentful/rich-text-types": "^16.2.0",
     "@storybook/addon-essentials": "^7.0.0-rc.8",
     "@storybook/addon-interactions": "^7.0.0-rc.8",
     "@storybook/addon-links": "^7.0.0-rc.8",
