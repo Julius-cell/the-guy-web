@@ -8,7 +8,7 @@ const options = {
       const nodeDocument = node as Block;
       for (let i = 0; i < nodeDocument.content?.length; i++) {
         const { value } = nodeDocument.content[i] as Text;
-        return <div>{value}</div>;
+        return <p className="indent-20">{value}</p>;
       }
     },
   },
@@ -23,5 +23,5 @@ export const RichText = ({ descriptionText }: RichTextProps) => {
   if (descriptionText) {
     richTextDescription = documentToReactComponents(descriptionText, options);
   }
-  return <div>{richTextDescription}</div>;
+  return <div className="text-justify whitespace-break-spaces">{richTextDescription}</div>;
 };
