@@ -1,10 +1,11 @@
+import { RichText } from '../at-richtext/RichText';
 import type { CardProps } from '../../types/components-type-props';
 
-export const Card = ({ cardTitle, description, ...props }: CardProps) => {
+export const Card = ({ cardTitle, descriptionText, ...props }: CardProps) => {
   return (
     <div className="p-20 bg-light-purple rounded-md drop-shadow-2xl">
       <h2>{cardTitle}</h2>
-      <p className="mt-20">{description}</p>
+      <RichText descriptionText={descriptionText} />
       <div className="mt-20 grid gap-20 grid-cols-2 border rounded p-20">
         <div className="flex flex-col gap-10">
           <div>

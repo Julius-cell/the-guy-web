@@ -1,7 +1,8 @@
 import type { ContentfulContent, MediaWrapperProps } from './contentful-types';
+import type { Document } from '@contentful/rich-text-types';
 
 export interface ModulesComponents {
-  [key: string]: React.ComponentType<any>;
+  [key: string]: React.ComponentType<CardProps | GridSectionProps>;
 }
 
 export interface HeaderProps extends ContentfulContent {
@@ -21,7 +22,7 @@ export interface GridSectionProps extends ContentfulContent {
 
 export interface CardProps extends ContentfulContent {
   cardTitle?: string;
-  description?: string;
+  descriptionText?: Document;
   link?: string;
   image?: MediaWrapperProps;
   personDetails?: Person;

@@ -13,7 +13,7 @@ const renderModuleComponent = (modulesList: string[], args: CardProps[]): ReactN
   ));
 };
 
-export const GridSection = ({ elements }: GridSectionProps) => {
+export const GridSection = ({ elements = [] }: GridSectionProps) => {
   const [modules, setModules] = useState<string[]>([]);
   const [moduleArgs, setModuleArgs] = useState<CardProps[]>([]);
 
@@ -26,14 +26,14 @@ export const GridSection = ({ elements }: GridSectionProps) => {
   };
 
   useEffect(() => {
-    mapContentTypesModules(elements!);
+    mapContentTypesModules(elements);
   }, []);
 
   const gridClassnameVariants = {
     one: 'grid grid-cols-1',
     two: 'grid grid-cols-1 md:grid-cols-2 gap-20',
   };
-  const gridClassname = Object.values(gridClassnameVariants)[elements!.length - 1];
+  const gridClassname = Object.values(gridClassnameVariants)[elements.length - 1];
 
   return (
     <div className={`mx-20 items-center ${gridClassname}`}>
