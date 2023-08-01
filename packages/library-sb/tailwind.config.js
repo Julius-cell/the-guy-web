@@ -20,7 +20,11 @@ export default {
       md: '680px',
       lg: '1366px',
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'header-shape-bg': "url('/public/default-img.jpeg')",
+      },
+    },
   },
   plugins: [],
 };
