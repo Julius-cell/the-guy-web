@@ -8,7 +8,7 @@ const options = {
       const nodeDocument = node as Block;
       for (let i = 0; i < nodeDocument.content?.length; i++) {
         const { value } = nodeDocument.content[i] as Text;
-        return <p className="indent-20">{value}</p>;
+        return <p className="tracking-tight">{value}</p>;
       }
     },
   },
