@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { Button } from '../at-button/Button';
 import { Image } from '../at-image/Image';
 import { Link } from '../at-link/Link';
 
@@ -42,7 +43,9 @@ export const Header = ({ hero, categories }: HeaderProps) => {
               <h2>{hero?.heroTitle}</h2>
               <p>{hero?.description}</p>
             </div>
-            <div className="m-auto">CTA</div>
+            <div className="w-max self-center justify-self-end">
+              <Button label="Download CV" />
+            </div>
           </div>
         </div>
       </div>
