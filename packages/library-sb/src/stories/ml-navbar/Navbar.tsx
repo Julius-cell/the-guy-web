@@ -1,4 +1,4 @@
-import { Image } from 'src/main';
+import { Image } from '../at-image/Image';
 import { Link } from '../at-link/Link';
 
 import type { LinkProps, MediaWrapperProps } from 'src/main';

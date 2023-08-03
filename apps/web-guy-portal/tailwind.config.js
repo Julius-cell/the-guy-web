@@ -13,6 +13,10 @@ export default {
       pink: '#D83F87',
     },
     extend: {
+      fontFamily: {
+        quattrocento: ['Quattrocento'],
+        oswald: ['Oswald'],
+      },
       backgroundImage: {
         'primary-gradient': 'radial-gradient(circle, #44318d, #3f2b78, #392563, #32204f, #2a1b3d);',
         'header-shape-bg': "url('/public/header-blob-bg.svg')",

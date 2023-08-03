@@ -3,31 +3,37 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Cambo-regular';
-  src: url('./fonts/Cambo/Cambo-Regular.ttf');
+  font-family: 'Quattrocento';
+  src: url('./fonts/Quattrocento/Quattrocento-Regular');
 }
 
 @font-face {
-  font-family: 'Roboto-regular';
-  src: url('./fonts/Roboto/Roboto-Regular.ttf');
+  font-family: 'Oswald';
+  src: url('./fonts/Oswald/Oswald-VariableFont_wght.ttf');
 }
-
 @layer base {
   body {
     @apply bg-primary-gradient;
     @apply bg-dark-purple;
     @apply text-white;
   }
-
   h1,
   h2,
-  h3 {
-    @apply font-roboto;
+  h3,
+  span {
+    @apply font-oswald;
     @apply font-bold;
+    @apply text-lg;
   }
+
+  span {
+    @apply text-pink;
+  }
+
   p,
-  a {
-    @apply font-cambo;
+  a,
+  button {
+    @apply font-quattrocento;
   }
 }
 
