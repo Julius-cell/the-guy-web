@@ -1,7 +1,7 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
+import type { RichTextProps } from '../../types/components-type-props';
 import type { NodeData, Block, Text } from '@contentful/rich-text-types';
-import type { RichTextProps } from 'src/main';
 
 const options = {
   renderNode: {
