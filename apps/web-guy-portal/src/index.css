@@ -58,3 +58,13 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #d83f87;
 }
+
+@media (max-width: 640px) {
+  /* For Webkit based browsers (e.g., Chrome, Safari) */
+  ::-webkit-scrollbar {
+    width: 0px;
+    display: none;
+    /* For Firefox */
+    scrollbar-width: none;
+  }
+}
