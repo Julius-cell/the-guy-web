@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        quattrocento: ['Quattrocento'],
-        oswald: ['Oswald'],
+        quattrocento: ['Quattrocento', 'serif'],
+        oswald: ['Oswald', 'sans-serif'],
       },
       backgroundImage: {
         'primary-gradient': 'radial-gradient(circle, #44318d, #3f2b78, #392563, #32204f, #2a1b3d);',

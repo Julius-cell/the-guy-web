@@ -4,13 +4,14 @@
 
 @font-face {
   font-family: 'Quattrocento';
-  src: url('./fonts/Quattrocento/Quattrocento-Regular');
+  src: url('./fonts/Quattrocento/Quattrocento-Regular.ttf');
 }
 
 @font-face {
   font-family: 'Oswald';
-  src: url('./fonts/Oswald/Oswald-VariableFont_wght.ttf');
+  src: url('./fonts/Oswald/static/Oswald-Regular.ttf');
 }
+
 @layer base {
   body {
     @apply bg-primary-gradient;
