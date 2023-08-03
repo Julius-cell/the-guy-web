@@ -1,7 +1,8 @@
 import { Image } from '../at-image/Image';
 import { Link } from '../at-link/Link';
 
-import type { LinkProps, MediaWrapperProps } from 'src/main';
+import type { LinkProps } from '../../types/components-type-props';
+import type { MediaWrapperProps } from '../../types/contentful-types';
 
 export const NavBar = (props: { categories?: LinkProps[]; languajes?: MediaWrapperProps[] }) => {
   return (
