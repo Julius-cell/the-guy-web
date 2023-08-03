@@ -8,6 +8,7 @@ export interface ModulesComponents {
 export interface HeaderProps extends ContentfulContent {
   categories?: LinkProps[];
   hero?: HeroSectionProps;
+  languajes?: MediaWrapperProps[];
 }
 
 export interface HeroSectionProps extends ContentfulContent {

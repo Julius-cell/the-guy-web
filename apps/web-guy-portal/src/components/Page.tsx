@@ -42,8 +42,8 @@ const Page = () => {
 
   return (
     <div>
-      <Header categories={page?.header?.categories} hero={page?.header?.hero} />
-      <main className="flex justify-center flex-col min-h-screen space-y-1/2">
+      <Header categories={page?.header?.categories} hero={page?.header?.hero} languajes={page?.header?.languajes} />
+      <main className="flex flex-col min-h-screen space-y-1/2">
         {modules.length ? renderModuleComponent(modules, moduleArgs) : <></>}
       </main>
     </div>
