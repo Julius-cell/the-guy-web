@@ -1,4 +1,4 @@
-import { CardProps, GridSectionProps, HeaderProps } from 'library-sb';
+import { CardProps, GridSectionProps, HeaderProps, RichTextProps } from 'library-sb';
 
 export interface ContentfulPage {
   title?: string;

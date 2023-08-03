@@ -1,6 +1,7 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
-import type { NodeData, Document, Block, Text } from '@contentful/rich-text-types';
+import type { NodeData, Block, Text } from '@contentful/rich-text-types';
+import type { RichTextProps } from 'src/main';
 
 const options = {
   renderNode: {
@@ -8,20 +9,21 @@ const options = {
       const nodeDocument = node as Block;
       for (let i = 0; i < nodeDocument.content?.length; i++) {
         const { value } = nodeDocument.content[i] as Text;
-        return <p className="tracking-tight">{value}</p>;
+        return (
+          <>
+            <p>{value}</p>
+            <br />
+          </>
+        );
       }
     },
   },
 };
 
-interface RichTextProps {
-  descriptionText: Document | undefined;
-}
-
-export const RichText = ({ descriptionText }: RichTextProps) => {
+export const RichText = ({ descriptionText, className = '' }: RichTextProps) => {
   let richTextDescription;
   if (descriptionText) {
     richTextDescription = documentToReactComponents(descriptionText, options);
   }
-  return <div className="text-justify whitespace-break-spaces">{richTextDescription}</div>;
+  return <div className={'text-justify' + className}>{richTextDescription}</div>;
 };
