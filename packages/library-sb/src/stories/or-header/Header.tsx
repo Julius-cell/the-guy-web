@@ -24,9 +24,13 @@ export const Header = ({ hero, categories, languajes = [] }: HeaderProps) => {
         <div className="grid auto-rows-max bg-header-shape-bg bg-no-repeat bg-10">
           <Image className="rounded-50 m-auto h-3/4" desktopAsset={heroImage} />
 
-          <div className="w-max grid grid-cols-2 h-fit">
-            <div>
-              <h2>{hero?.heroTitle}</h2>
+          <div className="grid grid-cols-2 h-fit">
+            <div className="w-max">
+              <div className="flex">
+                <span>{'<h1>'}</span>
+                <h2>{hero?.heroTitle}</h2>
+                <span>{'</h1>'}</span>
+              </div>
               <p>{hero?.description}</p>
             </div>
             <div className="w-max self-center justify-self-end">
