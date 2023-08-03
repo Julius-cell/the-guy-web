@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: 'Oswald';
-  src: url('fonts/Oswald/Oswald-Regular.ttf');
+  src: url('../public/fonts/Oswald/Oswald-Regular.ttf');
 }
 
 @font-face {
   font-family: 'Quattrocento';
-  src: url('fonts/Quattrocento/Quattrocento-Regular.ttf');
+  src: url('../public/fonts/Quattrocento/Quattrocento-Regular.ttf');
 }
 
 @layer base {
