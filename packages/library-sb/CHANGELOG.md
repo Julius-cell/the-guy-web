@@ -1,5 +1,11 @@
 # library-sb
 
+## 2.0.0
+
+### Major Changes
+
+- f8059be: new deploy
+
 ## 1.0.0
 
 ### Major Changes

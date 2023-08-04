@@ -1,7 +1,7 @@
 {
   "name": "library-sb",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "./src/main.tsx",
   "type": "module",
   "types": "./src/main.tsx",
