@@ -1,10 +1,15 @@
 # The Web Guy
 
-This is the officiall library and portal for my ultimate portfolio.
+This is the official library and portal for my ultimate portfolio.
 
 ## What's inside?
 
 This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes the following packages/apps:
+
+## How to use scripts?
+
+- `npm run format`: Runs Prettier on all files in your project directory and its subdirectories matching the extensions .ts, .tsx, and .md. Also overwrite the file with the proper format (--write flag).
+- `npm run lint`: Runs Eslint on all files in your project directory and its subdirectories. Also overwrite the file with the proper format (--fix flag).
 
 ### Apps and Packages
 
