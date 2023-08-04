@@ -28,7 +28,7 @@
     "node": ">=14.0.0"
   },
   "lint-staged": {
-    "*": "prettier . --ignore-unknown --write"
+    "*.{ts,tsx}": ["prettier --write", "eslint --fix"]
   },
   "packageManager": "pnpm@7.29.0"
 }

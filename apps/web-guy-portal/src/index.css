@@ -3,24 +3,69 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Cambo-regular';
-  src: url('./fonts/Cambo/Cambo-Regular.ttf');
+  font-family: 'Oswald';
+  src: url('../public/fonts/Oswald/Oswald-Regular.ttf');
 }
 
 @font-face {
-  font-family: 'Roboto-regular';
-  src: url('./fonts/Roboto/Roboto-Regular.ttf');
+  font-family: 'Quattrocento';
+  src: url('../public/fonts/Quattrocento/Quattrocento-Regular.ttf');
 }
 
 @layer base {
+  body {
+    @apply bg-primary-gradient;
+    @apply bg-dark-purple;
+    @apply text-white;
+  }
   h1,
   h2,
-  h3 {
-    @apply font-roboto;
+  h3,
+  span {
+    @apply font-oswald;
     @apply font-bold;
+    @apply text-lg;
   }
+
+  span {
+    @apply text-pink;
+  }
+
   p,
-  a {
-    @apply font-cambo;
+  a,
+  button {
+    @apply font-quattrocento;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 0.5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #8165a6;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #d83f87;
+}
+
+@media (max-width: 640px) {
+  /* For Webkit based browsers (e.g., Chrome, Safari) */
+  ::-webkit-scrollbar {
+    width: 0px;
+    display: none;
+    /* For Firefox */
+    scrollbar-width: none;
   }
 }

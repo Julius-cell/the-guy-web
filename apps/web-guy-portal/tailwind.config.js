@@ -2,6 +2,32 @@
 export default {
   presets: [require('library-sb/tailwind.config')],
   content: ['src/components/*.tsx', '../../packages/library-sb/src/stories/**/*.tsx'],
-  theme: {},
+  theme: {
+    colors: {
+      white: '#ffffff',
+      gray: '#A4B3B6',
+      purple: '#44318D',
+      primary: '#3544CF',
+      'light-purple': '#8165a6',
+      'dark-purple': '#2A1B3D',
+      pink: '#D83F87',
+    },
+    extend: {
+      fontFamily: {
+        quattrocento: ['Quattrocento', 'serif'],
+        oswald: ['Oswald', 'sans-serif'],
+      },
+      backgroundImage: {
+        'primary-gradient': 'radial-gradient(circle, #44318d, #3f2b78, #392563, #32204f, #2a1b3d);',
+        'header-shape-bg': "url('/public/header-blob-bg.svg')",
+      },
+      backgroundPosition: {
+        10: 'center -10px',
+      },
+      borderRadius: {
+        50: '50px',
+      },
+    },
+  },
   plugins: [],
 };

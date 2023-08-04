@@ -11,16 +11,16 @@ export default {
       10: '10px',
       20: '20px',
     },
-    fontFamily: {
-      roboto: ['Roboto-regular', 'sans-serif'],
-      cambo: ['Cambo-regular', 'sans-serif'],
-    },
     screens: {
       sm: '360px',
       md: '680px',
       lg: '1366px',
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'header-shape-bg': "url('/public/default-img.jpeg')",
+      },
+    },
   },
   plugins: [],
 };
