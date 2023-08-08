@@ -41,7 +41,7 @@ const Page = () => {
   }, []);
 
   return (
-    <div>
+    <div className="grid grid-cols-4 mx-10">
       <Header categories={page?.header?.categories} hero={page?.header?.hero} languajes={page?.header?.languajes} />
       <main className="flex flex-col min-h-screen space-y-1/2 mt-1/10">
         {modules.length ? renderModuleComponent(modules, moduleArgs) : <></>}
