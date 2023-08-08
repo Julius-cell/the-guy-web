@@ -17,25 +17,23 @@ export const Header = ({ hero, categories, languajes = [] }: HeaderProps) => {
   }, [hero?.heroAssets]);
 
   return (
-    <header className="px-20 w-full">
-      <div className="relative">
-        <NavBar categories={categories} languajes={languajes} />
+    <header className="col-span-full grid grid-cols-4">
+      <NavBar categories={categories} languajes={languajes} />
 
-        <div className="grid auto-rows-max bg-header-shape-bg bg-no-repeat bg-10">
-          <Image className="rounded-50 m-auto h-3/4" desktopAsset={heroImage} />
+      <div className="grid auto-rows-max bg-header-shape-bg bg-no-repeat bg-10">
+        <Image className="rounded-50 m-auto h-3/4" desktopAsset={heroImage} />
 
-          <div className="grid grid-cols-2 h-fit">
-            <div className="w-max">
-              <div className="flex">
-                <span>{'<h1>'}</span>
-                <h2>{hero?.heroTitle}</h2>
-                <span>{'</h1>'}</span>
-              </div>
-              <p>{hero?.description}</p>
+        <div className="grid grid-cols-2 h-fit">
+          <div className="w-max">
+            <div className="flex">
+              <span>{'<h1>'}</span>
+              <h2>{hero?.heroTitle}</h2>
+              <span>{'</h1>'}</span>
             </div>
-            <div className="w-max self-center justify-self-end">
-              <Button label="Download CV" />
-            </div>
+            <p>{hero?.description}</p>
+          </div>
+          <div className="w-max self-center justify-self-end">
+            <Button label="Download CV" />
           </div>
         </div>
       </div>
