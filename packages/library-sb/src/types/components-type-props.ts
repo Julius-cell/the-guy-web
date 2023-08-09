@@ -2,7 +2,7 @@ import type { ContentfulContent, MediaWrapperProps } from './contentful-types';
 import type { Document } from '@contentful/rich-text-types';
 
 export interface ModulesComponents {
-  [key: string]: React.ComponentType<CardProps | GridSectionProps | RichTextProps>;
+  [key: string]: React.ComponentType<CardProps | RichTextProps>;
 }
 
 export interface HeaderProps extends ContentfulContent {
@@ -15,10 +15,6 @@ export interface HeroSectionProps extends ContentfulContent {
   heroTitle?: string;
   description?: string;
   heroAssets?: MediaWrapperProps[];
-}
-
-export interface GridSectionProps extends ContentfulContent {
-  elements?: (CardProps | RichTextProps)[];
 }
 
 export interface CardProps extends ContentfulContent {
