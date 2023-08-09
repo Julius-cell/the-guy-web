@@ -20,10 +20,10 @@ export const Header = ({ hero, categories, languajes = [] }: HeaderProps) => {
     <header className="col-span-full grid grid-cols-4">
       <NavBar categories={categories} languajes={languajes} />
 
-      <div className="grid auto-rows-max bg-header-shape-bg bg-no-repeat bg-10">
+      <div className="col-span-full bg-header-shape-bg bg-no-repeat bg-10">
         <Image className="rounded-50 m-auto h-3/4" desktopAsset={heroImage} />
 
-        <div className="grid grid-cols-2 h-fit">
+        <div className="grid grid-cols-2 h-fit px-10 py-20">
           <div className="w-max">
             <div className="flex">
               <span>{'<h1>'}</span>

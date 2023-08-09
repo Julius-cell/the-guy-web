@@ -18,7 +18,7 @@ export const NavBar = (props: { categories?: LinkProps[]; languajes?: MediaWrapp
           );
         })}
       </div>
-      <ul className="h-[inherit] col-start-2">
+      <ul className="h-[inherit] ml-auto col-start-2 col-span-full space-x-20">
         {props.categories?.map((categorie, index) => <Link key={index} {...categorie} />)}
       </ul>
     </nav>
