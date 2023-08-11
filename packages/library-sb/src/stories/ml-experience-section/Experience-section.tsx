@@ -26,10 +26,10 @@ export const ExperienceSection = ({ name, workFields }: ExperienceSectionProps) 
         {workFields?.map((work: WorkField, i: number) => (
           <li
             key={i}
-            className="relative before:absolute before:w-20 before:h-20 before:rounded-full before:bg-pink before:-left-11 before:top-30"
+            className="relative before:absolute before:w-20 before:h-20 before:rounded-full before:bg-pink before:-left-11"
           >
-            <div className="pl-1/10">
-              <div className="flex bg-blue rounded-full px-10 w-fit text-sm">
+            <div className="pl-1/10 relative">
+              <div className="flex bg-pink rounded-full px-10 w-fit text-sm before:absolute before:w-25 before:border-pink before:border-2 before:left-8 before:top-8">
                 <p>{work.startDate && transformDate(work.startDate)}</p>
                 <p className="px-4"> - </p>
                 <p>{work.endDate ? transformDate(work.endDate) : ' Actualidad'}</p>
