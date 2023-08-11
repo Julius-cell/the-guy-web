@@ -1,4 +1,4 @@
-import type { IconProps } from 'src/main';
+import type { IconProps } from '../../../types/components-type-props';
 
 export const ChevronDownIcon = ({ className = '', handleClick }: IconProps) => {
   return (
