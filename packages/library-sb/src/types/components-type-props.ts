@@ -70,3 +70,8 @@ export interface WorkField extends ContentfulContent {
   startDate?: string;
   endDate?: string;
 }
+
+export interface IconProps {
+  className: string;
+  handleClick(): any;
+}

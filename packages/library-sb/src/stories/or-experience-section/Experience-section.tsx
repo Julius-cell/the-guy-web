@@ -1,4 +1,5 @@
 import { RichText } from '../at-richtext/RichText';
+import { CollapsibleContainer } from '../ml-collapsible-container/Collapsible-container';
 import type { ExperienceSectionProps, WorkField } from '../../types/components-type-props';
 
 const transformDate = (inputDate: string) => {
@@ -19,24 +20,21 @@ const transformDate = (inputDate: string) => {
 export const ExperienceSection = ({ name, workFields }: ExperienceSectionProps) => {
   return (
     <div className="col-span-full">
-      {/* title */}
       <h2 className="text-center">{name}</h2>
-      {/* exp fields */}
-      <ul className="border-l-2 border-l-pink mt-20">
+      <ul className="border-l-2 border-l-pink mt-20 relative grid gap-y-20">
         {workFields?.map((work: WorkField, i: number) => (
           <li
             key={i}
-            className="relative before:absolute before:w-20 before:h-20 before:rounded-full before:bg-pink before:-left-11"
+            className="relative pl-1/10 before:absolute before:w-20 before:h-20 before:rounded-full before:bg-pink before:-left-11"
           >
-            <div className="pl-1/10 relative">
-              <div className="flex bg-pink rounded-full px-10 w-fit text-sm before:absolute before:w-25 before:border-pink before:border-2 before:left-8 before:top-8">
-                <p>{work.startDate && transformDate(work.startDate)}</p>
-                <p className="px-4"> - </p>
-                <p>{work.endDate ? transformDate(work.endDate) : ' Actualidad'}</p>
-              </div>
-              <h3 className="mt-4">{work.name}</h3>
-              <RichText className="mt-10" descriptionText={work.workDetails?.descriptionText} />
+            <div className="flex bg-pink rounded-full px-10 w-fit text-sm before:absolute before:w-1/10 before:border-pink before:border-2 before:left-8 before:top-8">
+              <p>{work.startDate && transformDate(work.startDate)}</p>
+              <p className="px-4"> - </p>
+              <p>{work.endDate ? transformDate(work.endDate) : ' Actualidad'}</p>
             </div>
+            <CollapsibleContainer title={work.name}>
+              <RichText className="mt-10" descriptionText={work.workDetails?.descriptionText} />
+            </CollapsibleContainer>
           </li>
         ))}
       </ul>
