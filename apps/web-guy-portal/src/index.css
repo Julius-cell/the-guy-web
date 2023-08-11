@@ -18,13 +18,20 @@
     @apply bg-dark-purple;
     @apply text-white;
   }
-  h1,
-  h2,
-  h3,
-  span {
+  h1, span {
     @apply font-oswald;
-    @apply font-bold;
-    @apply text-lg;
+    @apply font-extrabold;
+    @apply text-xl;
+  }
+  h2 {
+    @apply font-oswald;
+    @apply font-semibold;
+    @apply text-xl;
+  }
+  h3 {
+    @apply font-oswald;
+    @apply font-medium;
+    @apply text-base;
   }
 
   span {
