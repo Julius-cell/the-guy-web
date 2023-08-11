@@ -27,7 +27,7 @@ export const Header = ({ hero, categories, languajes = [] }: HeaderProps) => {
           <div className="w-max">
             <div className="flex">
               <span>{'<h1>'}</span>
-              <h2>{hero?.heroTitle}</h2>
+              <h1>{hero?.heroTitle}</h1>
               <span>{'</h1>'}</span>
             </div>
             <p>{hero?.description}</p>
