@@ -25,5 +25,5 @@ export const RichText = ({ descriptionText, className = '' }: RichTextProps) => 
   if (descriptionText) {
     richTextDescription = documentToReactComponents(descriptionText, options);
   }
-  return <div className={'text-justify' + className}>{richTextDescription}</div>;
+  return <div className={`text-justify ${className}`}>{richTextDescription}</div>;
 };

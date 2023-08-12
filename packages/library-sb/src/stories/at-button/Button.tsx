@@ -8,7 +8,7 @@ export const Button = ({ label, isPrimary = true }: ButtonProps) => {
       w-full rounded-md p-10 transition
       ${
         isPrimary
-          ? 'bg-primary hover:bg-pink text-white hover:drop-shadow-md hover:scale-105'
+          ? 'bg-blue hover:bg-pink text-white hover:drop-shadow-md hover:scale-105'
           : 'hover:bg-pink hover:text-white border-2 border-pink'
       }
     `}

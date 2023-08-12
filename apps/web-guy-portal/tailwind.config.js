@@ -5,12 +5,11 @@ export default {
   theme: {
     colors: {
       white: '#ffffff',
-      gray: '#A4B3B6',
-      purple: '#44318D',
-      primary: '#3544CF',
-      'light-purple': '#8165a6',
-      'dark-purple': '#2A1B3D',
+      'dark-blue': '#1A1F47',
+      'dark-purple': '#2c1c42',
       pink: '#D83F87',
+      blue: '#3544CF',
+      purple: '#44318D'
     },
     extend: {
       fontFamily: {
