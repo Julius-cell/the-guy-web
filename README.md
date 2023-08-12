@@ -10,6 +10,8 @@ This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes th
 
 - `npm run format`: Runs Prettier on all files in your project directory and its subdirectories matching the extensions .ts, .tsx, and .md. Also overwrite the file with the proper format (--write flag).
 - `npm run lint`: Runs Eslint on all files in your project directory and its subdirectories. Also overwrite the file with the proper format (--fix flag).
+- `contentful space export --environment-id <env_source> --content-file migrate-file.json`: Runs contentful-cli to export environment's data into a json file.
+- `contentful space import --environment-id <env_target> --content-file migrate-file.json`: Runs contentful-cli to import environment's data from json file into contenful environment.
 
 ### Apps and Packages
 
