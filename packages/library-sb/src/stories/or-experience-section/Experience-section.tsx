@@ -1,21 +1,7 @@
+import { transformDate } from '../../utils/transform-date';
 import { RichText } from '../at-richtext/RichText';
 import { CollapsibleContainer } from '../ml-collapsible-container/Collapsible-container';
 import type { ExperienceSectionProps, WorkField } from '../../types/components-type-props';
-
-const transformDate = (inputDate: string) => {
-  // Convert the input date to a Date object
-  const dateObj = new Date(inputDate);
-
-  // Extract the date, month and year from the date object
-  const date = dateObj.getDate();
-  const month = dateObj.getMonth() + 1; // Months range from 0 to 11. So, adding 1 to get 1-12.
-  const year = dateObj.getFullYear();
-
-  // Combine date, month and year to get the desired format | Output: 27/07/2023
-  const formattedDate = `${date.toString().padStart(2, '0')}/${month.toString().padStart(2, '0')}/${year}`;
-
-  return formattedDate;
-};
 
 export const ExperienceSection = ({ name, workFields }: ExperienceSectionProps) => {
   return (
@@ -32,7 +18,7 @@ export const ExperienceSection = ({ name, workFields }: ExperienceSectionProps) 
               <p className="px-4"> - </p>
               <p>{work.endDate ? transformDate(work.endDate) : ' Actualidad'}</p>
             </div>
-            <CollapsibleContainer title={work.name}>
+            <CollapsibleContainer title={work.name} index={i}>
               <RichText className="mt-10" descriptionText={work.workDetails?.descriptionText} />
             </CollapsibleContainer>
           </li>
