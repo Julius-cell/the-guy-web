@@ -30,11 +30,16 @@ export interface ExperienceSectionProps extends ContentfulContent {
   workFields?: WorkField[];
 }
 
+export interface FooterProps extends ContentfulContent {
+  rrss?: LinkProps[];
+}
+
 export interface LinkProps extends ContentfulContent {
   label?: string;
   actionType?: string;
   actionUrl?: string;
   subLinks?: LinkProps[];
+  media?: ImageProps;
 }
 
 export interface ImageProps extends MediaWrapperProps {

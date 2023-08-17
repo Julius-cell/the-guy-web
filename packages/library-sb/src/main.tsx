@@ -6,6 +6,7 @@ export * from './stories/ml-card/Card';
 
 export * from './stories/or-experience-section/Experience-section';
 export * from './stories/or-header/Header';
+export * from './stories/or-footer/Footer';
 
 export * from './types/components-type-props';
 export * from './types/contentful-types';
