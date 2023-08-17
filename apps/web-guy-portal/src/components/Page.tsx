@@ -7,6 +7,7 @@ import {
   RichTextProps,
   ExperienceSectionProps,
   ExperienceSection,
+  Footer,
 } from 'library-sb';
 import React, { ReactNode, useEffect, useState } from 'react';
 import { getPage } from '../contentful/get-page';
@@ -56,6 +57,7 @@ const Page = () => {
       <main className="col-span-full min-h-screen space-y-1/3 mx-20">
         {modules.length ? renderModuleComponent(modules, moduleArgs) : <></>}
       </main>
+      <Footer rrss={page?.footer?.rrss} />
     </div>
   );
 };
