@@ -6,21 +6,24 @@ import type { MediaWrapperProps } from '../../types/contentful-types';
 
 export const NavBar = (props: { categories?: LinkProps[]; languajes?: MediaWrapperProps[] }) => {
   return (
-    <nav className="h-20 my-10  col-span-full grid grid-cols-4 items-center">
-      <div className="h-[inherit] flex w-fit bg-white rounded-lg border-2">
+    <nav className="py-10 col-span-full grid grid-cols-4 items-center">
+      <div>
+        <p>Julio Cid</p>
+      </div>
+      <ul className="hidden md:block col-start-2 col-span-2 space-x-20 justify-self-center">
+        {props.categories?.map((categorie, index) => <Link key={index} {...categorie} />)}
+      </ul>
+      <div className="col-start-4 flex w-fit bg-white rounded-lg border-2 justify-self-end">
         {props.languajes?.map((languaje, index) => {
           return (
             <Image
               key={index}
               desktopAsset={languaje.desktopAsset}
-              className="h-full ease-in duration-200 hover:scale-125"
+              className="h-20 ease-in duration-200 hover:scale-125"
             />
           );
         })}
       </div>
-      <ul className="h-[inherit] ml-auto col-start-2 col-span-full space-x-20">
-        {props.categories?.map((categorie, index) => <Link key={index} {...categorie} />)}
-      </ul>
     </nav>
   );
 };
