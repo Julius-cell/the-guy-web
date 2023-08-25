@@ -2,7 +2,7 @@ import type { ContentfulContent, MediaWrapperProps } from './contentful-types';
 import type { Document } from '@contentful/rich-text-types';
 
 export interface ModulesComponents {
-  [key: string]: React.ComponentType<RichTextProps | ExperienceSectionProps>;
+  [key: string]: React.ComponentType<RichTextProps | WorkSectionProps>;
 }
 
 export interface HeaderProps extends ContentfulContent {
@@ -13,13 +13,20 @@ export interface HeaderProps extends ContentfulContent {
   rrss?: LinkProps[];
 }
 
-export interface ExperienceSectionProps extends ContentfulContent {
+export interface WorkSectionProps extends ContentfulContent {
   name?: string;
   workFields?: WorkField[];
 }
 
 export interface FooterProps extends ContentfulContent {
   rrss?: LinkProps[];
+}
+
+export interface AboutSectionProps extends ContentfulContent {
+  title?: string;
+  image?: ImageProps;
+  cvButton?: ButtonProps;
+  description?: RichTextProps;
 }
 
 export interface LinkProps extends ContentfulContent {
@@ -39,11 +46,13 @@ export interface ButtonProps extends ContentfulContent {
   actionType?: 'self' | 'blank';
   actionUrl?: string;
   isPrimary?: boolean;
+  className?: string;
   onClick?: () => void;
 }
 
 export interface RichTextProps extends ContentfulContent {
-  descriptionText?: Document | undefined;
+  ingText?: Document | undefined;
+  espText?: Document | undefined;
   className?: string;
 }
 

@@ -12,7 +12,7 @@ const options = {
         return (
           <>
             <p>{value}</p>
-            <br />
+            {nodeDocument.content.length > 1 && <br />}
           </>
         );
       }
@@ -20,10 +20,12 @@ const options = {
   },
 };
 
-export const RichText = ({ descriptionText, className = '' }: RichTextProps) => {
+export const RichText = ({ espText, ingText, className = '' }: RichTextProps) => {
   let richTextDescription;
-  if (descriptionText) {
-    richTextDescription = documentToReactComponents(descriptionText, options);
+  if (espText) {
+    richTextDescription = documentToReactComponents(espText, options);
+  } else if (ingText) {
+    richTextDescription = documentToReactComponents(ingText, options);
   }
-  return <div className={`text-justify ${className}`}>{richTextDescription}</div>;
+  return <div className={`${className}`}>{richTextDescription}</div>;
 };
