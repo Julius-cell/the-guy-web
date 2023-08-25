@@ -1,10 +1,9 @@
-import { Image } from '../at-image/Image';
 import type { LinkProps } from '../../types/components-type-props';
 
-export const Link = ({ media, ...props }: LinkProps) => {
+export const Link = ({ actionUrl, isBlank, label, children }: LinkProps) => {
   return (
-    <a href={props.actionUrl} target={props.actionType}>
-      {!media ? props?.label : <Image className="h-full" desktopAsset={media.desktopAsset} />}
+    <a href={actionUrl} target={isBlank ? '_blank' : '_self'} rel="noreferrer">
+      {!children ? label : children}
     </a>
   );
 };

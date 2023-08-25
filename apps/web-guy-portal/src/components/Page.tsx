@@ -1,23 +1,12 @@
-import {
-  Card,
-  CardProps,
-  RichText,
-  Header,
-  ModulesComponents,
-  RichTextProps,
-  ExperienceSectionProps,
-  ExperienceSection,
-  Footer,
-} from 'library-sb';
+import { Header, ModulesComponents, RichTextProps, ExperienceSectionProps, Footer } from 'library-sb';
 import React, { ReactNode, useEffect, useState } from 'react';
 import { getPage } from '../contentful/get-page';
 import { ContentfulPage } from '../types/page-types';
 
-const renderModuleComponent = (modulesList: string[], args: CardProps[]): ReactNode[] => {
+const renderModuleComponent = (modulesList: string[], args: ExperienceSectionProps[]): ReactNode[] => {
   const modulesComponents: ModulesComponents = {
-    mlCard: Card,
-    richText: RichText,
-    mlExperienceSection: ExperienceSection,
+    // orAboutSection: AboutSection,
+    // orWorkSection: WorkSection,
   };
 
   return modulesList.map((module: string, index: number) => (
@@ -28,14 +17,14 @@ const renderModuleComponent = (modulesList: string[], args: CardProps[]): ReactN
 const Page = () => {
   const [page, setPage] = useState<ContentfulPage | undefined>(undefined);
   const [modules, setModules] = useState<string[]>([]);
-  const [moduleArgs, setModuleArgs] = useState<(CardProps | RichTextProps | ExperienceSectionProps)[]>([]);
+  const [moduleArgs, setModuleArgs] = useState<ExperienceSectionProps[]>([]);
 
-  const mapContentTypesModules = (modulesArray: (CardProps | RichTextProps | ExperienceSectionProps)[]) => {
+  const mapContentTypesModules = (modulesArray: ExperienceSectionProps[]) => {
     for (let index = 0; index < modulesArray.length; index++) {
       const { contentTypeId, ...args } = modulesArray[index];
 
       setModules((prevModules: string[]) => [...prevModules, contentTypeId || '']);
-      setModuleArgs((prevArgs: (CardProps | RichTextProps | ExperienceSectionProps)[]) => [...prevArgs, args]);
+      setModuleArgs((prevArgs: ExperienceSectionProps[]) => [...prevArgs, args]);
     }
   };
 
@@ -53,7 +42,7 @@ const Page = () => {
 
   return (
     <div className="grid grid-cols-4 mx-10">
-      <Header categories={page?.header?.categories} hero={page?.header?.hero} languajes={page?.header?.languajes} />
+      <Header {...page?.header} />
       <main className="col-span-full min-h-screen space-y-1/3 mx-20">
         {modules.length ? renderModuleComponent(modules, moduleArgs) : <></>}
       </main>

@@ -15,6 +15,6 @@ export interface MediaWrapperProps extends ContentfulContent {
 }
 
 export interface ContentfulContent {
-  title?: string;
+  name?: string;
   contentTypeId?: string;
 }

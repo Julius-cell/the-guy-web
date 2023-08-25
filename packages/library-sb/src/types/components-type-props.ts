@@ -2,27 +2,15 @@ import type { ContentfulContent, MediaWrapperProps } from './contentful-types';
 import type { Document } from '@contentful/rich-text-types';
 
 export interface ModulesComponents {
-  [key: string]: React.ComponentType<CardProps | RichTextProps | ExperienceSectionProps>;
+  [key: string]: React.ComponentType<RichTextProps | ExperienceSectionProps>;
 }
 
 export interface HeaderProps extends ContentfulContent {
+  title?: string;
+  subTitle?: string;
   categories?: LinkProps[];
-  hero?: HeroSectionProps;
   languajes?: MediaWrapperProps[];
-}
-
-export interface HeroSectionProps extends ContentfulContent {
-  heroTitle?: string;
-  description?: string;
-  heroAssets?: MediaWrapperProps[];
-}
-
-export interface CardProps extends ContentfulContent {
-  cardTitle?: string;
-  descriptionText?: Document;
-  link?: string;
-  image?: MediaWrapperProps;
-  personDetails?: Person;
+  rrss?: LinkProps[];
 }
 
 export interface ExperienceSectionProps extends ContentfulContent {
@@ -36,10 +24,10 @@ export interface FooterProps extends ContentfulContent {
 
 export interface LinkProps extends ContentfulContent {
   label?: string;
-  actionType?: string;
+  isBlank?: boolean;
   actionUrl?: string;
-  subLinks?: LinkProps[];
-  media?: ImageProps;
+  image?: ImageProps;
+  children?: React.ReactNode;
 }
 
 export interface ImageProps extends MediaWrapperProps {
@@ -57,15 +45,6 @@ export interface ButtonProps extends ContentfulContent {
 export interface RichTextProps extends ContentfulContent {
   descriptionText?: Document | undefined;
   className?: string;
-}
-
-interface Person extends ContentfulContent {
-  name?: string;
-  address?: string;
-  age?: number;
-  experience?: string;
-  phone?: string;
-  links?: LinkProps[];
 }
 
 export interface WorkField extends ContentfulContent {

@@ -9,7 +9,8 @@ export default {
       'dark-purple': '#2c1c42',
       pink: '#D83F87',
       blue: '#3544CF',
-      purple: '#44318D'
+      purple: '#44318D',
+      black: '#000000'
     },
     extend: {
       fontFamily: {
