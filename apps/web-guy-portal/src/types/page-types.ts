@@ -1,9 +1,9 @@
-import { HeaderProps, ExperienceSectionProps, FooterProps } from 'library-sb';
+import { HeaderProps, WorkSectionProps, FooterProps } from 'library-sb';
 
 export interface ContentfulPage {
   title?: string;
   baseUrl?: string;
   header?: HeaderProps;
-  modules?: ExperienceSectionProps[] | undefined;
+  modules?: WorkSectionProps[] | undefined;
   footer?: FooterProps;
 }

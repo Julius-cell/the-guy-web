@@ -1,9 +1,9 @@
 import { transformDate } from '../../utils/transform-date';
 import { RichText } from '../at-richtext/RichText';
 import { CollapsibleContainer } from '../ml-collapsible-container/Collapsible-container';
-import type { ExperienceSectionProps, WorkField } from '../../types/components-type-props';
+import type { WorkSectionProps, WorkField } from '../../types/components-type-props';
 
-export const ExperienceSection = ({ name, workFields }: ExperienceSectionProps) => {
+export const WorkSection = ({ name, workFields }: WorkSectionProps) => {
   return (
     <div className="col-span-full">
       <h2 className="text-center">{name}</h2>
@@ -19,7 +19,7 @@ export const ExperienceSection = ({ name, workFields }: ExperienceSectionProps) 
               <p>{work.endDate ? transformDate(work.endDate) : ' Actualidad'}</p>
             </div>
             <CollapsibleContainer title={work.name} index={i}>
-              <RichText className="mt-10" descriptionText={work.workDetails?.descriptionText} />
+              <RichText className="mt-10" ingText={work.workDetails?.ingText} />
             </CollapsibleContainer>
           </li>
         ))}
@@ -28,4 +28,4 @@ export const ExperienceSection = ({ name, workFields }: ExperienceSectionProps) 
   );
 };
 
-export default ExperienceSection;
+export default WorkSection;

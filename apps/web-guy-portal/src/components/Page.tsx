@@ -1,12 +1,12 @@
-import { Header, ModulesComponents, RichTextProps, ExperienceSectionProps, Footer } from 'library-sb';
+import { Header, ModulesComponents, WorkSection, Footer, AboutSection, WorkSectionProps } from 'library-sb';
 import React, { ReactNode, useEffect, useState } from 'react';
 import { getPage } from '../contentful/get-page';
 import { ContentfulPage } from '../types/page-types';
 
-const renderModuleComponent = (modulesList: string[], args: ExperienceSectionProps[]): ReactNode[] => {
+const renderModuleComponent = (modulesList: string[], args: WorkSectionProps[]): ReactNode[] => {
   const modulesComponents: ModulesComponents = {
-    // orAboutSection: AboutSection,
-    // orWorkSection: WorkSection,
+    orAboutSection: AboutSection,
+    orWorkSection: WorkSection,
   };
 
   return modulesList.map((module: string, index: number) => (
@@ -17,14 +17,14 @@ const renderModuleComponent = (modulesList: string[], args: ExperienceSectionPro
 const Page = () => {
   const [page, setPage] = useState<ContentfulPage | undefined>(undefined);
   const [modules, setModules] = useState<string[]>([]);
-  const [moduleArgs, setModuleArgs] = useState<ExperienceSectionProps[]>([]);
+  const [moduleArgs, setModuleArgs] = useState<WorkSectionProps[]>([]);
 
-  const mapContentTypesModules = (modulesArray: ExperienceSectionProps[]) => {
+  const mapContentTypesModules = (modulesArray: WorkSectionProps[]) => {
     for (let index = 0; index < modulesArray.length; index++) {
       const { contentTypeId, ...args } = modulesArray[index];
 
       setModules((prevModules: string[]) => [...prevModules, contentTypeId || '']);
-      setModuleArgs((prevArgs: ExperienceSectionProps[]) => [...prevArgs, args]);
+      setModuleArgs((prevArgs: WorkSectionProps[]) => [...prevArgs, args]);
     }
   };
 
