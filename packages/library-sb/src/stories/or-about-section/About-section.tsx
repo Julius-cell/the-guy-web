@@ -5,7 +5,7 @@ import type { AboutSectionProps } from '../../types/components-type-props';
 
 export const AboutSection = ({ title, description, image, cvButton }: AboutSectionProps) => {
   return (
-    <div className="text-center py-20 grid md:grid-cols-2">
+    <div className="text-center grid md:grid-cols-2">
       <div className="grid gap-y-30 md:px-1/10">
         <h2>{title}</h2>
         <RichText ingText={description?.ingText} espText={description?.espText} />

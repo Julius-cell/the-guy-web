@@ -2,17 +2,14 @@ import { useState } from 'react';
 import { collapseSection, expandSection } from '../../utils/collapse-fn';
 import { ChevronDownIcon } from '../assets/icons/chevron-down';
 import { ChevronUpIcon } from '../assets/icons/chevron-up';
+import { RichText } from '../at-richtext/RichText';
+import type { CollapsibleContainerProps } from '../../types/components-type-props';
 
-interface CollapsibleContainerProps {
-  title?: string;
-  index: number;
-  children: React.ReactNode;
-}
-
-export const CollapsibleContainer: React.FC<CollapsibleContainerProps> = ({
-  title = '',
+export const CollapsibleContainer = ({
   index,
-  children,
+  workTitle,
+  detailsDesktop,
+  detailsMobile,
 }: CollapsibleContainerProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const elementId = `collapsible_${index}`;
@@ -36,7 +33,7 @@ export const CollapsibleContainer: React.FC<CollapsibleContainerProps> = ({
   return (
     <div className="w-full">
       <div className="mt-4 grid grid-cols-[90%_auto] items-center">
-        <h3>{title}</h3>
+        <h3>{workTitle}</h3>
         {isOpen ? (
           <ChevronUpIcon handleClick={handleClick} className="h-20 w-20 cursor-pointer justify-self-center" />
         ) : (
@@ -44,7 +41,8 @@ export const CollapsibleContainer: React.FC<CollapsibleContainerProps> = ({
         )}
       </div>
       <div id={elementId} data-collapsed={true} className="transition-all overflow-hidden px-4 py-2 mt-2 h-0">
-        {children}
+        <RichText className="md:hidden mt-10" {...detailsMobile} />
+        <RichText className="hidden mt-10" {...detailsDesktop} />
       </div>
     </div>
   );

@@ -1,4 +1,13 @@
-import { Header, ModulesComponents, WorkSection, Footer, AboutSection, WorkSectionProps } from 'library-sb';
+import {
+  Header,
+  ModulesComponents,
+  WorkSection,
+  Footer,
+  AboutSection,
+  WorkSectionProps,
+  LanguageProvider,
+  NavBar,
+} from 'library-sb';
 import React, { ReactNode, useEffect, useState } from 'react';
 import { getPage } from '../contentful/get-page';
 import { ContentfulPage } from '../types/page-types';
@@ -41,13 +50,15 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-4 mx-10">
-      <Header {...page?.header} />
-      <main className="col-span-full min-h-screen space-y-1/3 mx-20">
+    <LanguageProvider>
+      <Header {...page?.header}>
+        <NavBar categories={page?.header?.categories} languajes={page?.header?.languajes} />
+      </Header>
+      <main className="col-span-full min-h-screen space-y-1/3 md:space-y-1/10 mx-20 my-30">
         {modules.length ? renderModuleComponent(modules, moduleArgs) : <></>}
       </main>
       <Footer rrss={page?.footer?.rrss} />
-    </div>
+    </LanguageProvider>
   );
 };
 

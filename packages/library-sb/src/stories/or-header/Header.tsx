@@ -1,13 +1,12 @@
 import { Image } from '../at-image/Image';
 import { Link } from '../at-link/Link';
-import { NavBar } from '../ml-navbar/Navbar';
 
 import type { HeaderProps } from '../../types/components-type-props';
 
-export const Header = ({ title, subTitle, categories, languajes, rrss = [] }: HeaderProps) => {
+export const Header = ({ title, subTitle, rrss = [], children }: HeaderProps) => {
   return (
     <header className="col-span-full grid grid-cols-4 h-screen grid-rows-[auto_1fr]">
-      <NavBar categories={categories} languajes={languajes} />
+      {children}
       <div className="border-t border-t-black col-span-full flex flex-col justify-center text-center gap-20">
         <h1>
           <span>{'<h1>'}</span>
