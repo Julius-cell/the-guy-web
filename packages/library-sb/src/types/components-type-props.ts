@@ -11,11 +11,16 @@ export interface HeaderProps extends ContentfulContent {
   categories?: LinkProps[];
   languajes?: MediaWrapperProps[];
   rrss?: LinkProps[];
+  children?: React.ReactNode;
 }
 
 export interface WorkSectionProps extends ContentfulContent {
-  name?: string;
-  workFields?: WorkField[];
+  title?: string;
+  experienceInfo?: WorkField[];
+}
+
+export interface CollapsibleContainerProps extends WorkField {
+  index: number;
 }
 
 export interface FooterProps extends ContentfulContent {
@@ -51,17 +56,17 @@ export interface ButtonProps extends ContentfulContent {
 }
 
 export interface RichTextProps extends ContentfulContent {
-  ingText?: Document | undefined;
   espText?: Document | undefined;
+  ingText?: Document | undefined;
   className?: string;
 }
 
 export interface WorkField extends ContentfulContent {
-  name?: string;
-  workDetails?: RichTextProps;
-  workDetailsMobile?: RichTextProps;
+  workTitle?: string;
   startDate?: string;
   endDate?: string;
+  detailsMobile?: RichTextProps;
+  detailsDesktop?: RichTextProps;
 }
 
 export interface IconProps {
