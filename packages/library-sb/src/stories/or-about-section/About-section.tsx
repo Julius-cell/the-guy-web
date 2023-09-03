@@ -1,13 +1,17 @@
+import { useContext } from 'react';
+import { LanguageContext } from '../../main';
 import { Button } from '../at-button/Button';
 import { Image } from '../at-image/Image';
 import { RichText } from '../at-richtext/RichText';
 import type { AboutSectionProps } from '../../types/components-type-props';
 
-export const AboutSection = ({ title, description, image, cvButton }: AboutSectionProps) => {
+export const AboutSection = ({ titleEng, titleEsp, description, image, cvButton }: AboutSectionProps) => {
+  const { language } = useContext(LanguageContext);
+
   return (
     <div className="text-center grid md:grid-cols-2">
       <div className="grid gap-y-30 md:px-1/10">
-        <h2>{title}</h2>
+        <h2>{language === 'ENG' ? titleEng : titleEsp}</h2>
         <RichText ingText={description?.ingText} espText={description?.espText} />
         <div className="justify-self-center">
           <Button {...cvButton} className="w-fit" />

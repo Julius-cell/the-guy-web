@@ -7,7 +7,8 @@ export interface ModulesComponents {
 
 export interface HeaderProps extends ContentfulContent {
   title?: string;
-  subTitle?: string;
+  subTitleEsp?: string;
+  subTitleEng?: string;
   categories?: LinkProps[];
   languajes?: MediaWrapperProps[];
   rrss?: LinkProps[];
@@ -15,7 +16,8 @@ export interface HeaderProps extends ContentfulContent {
 }
 
 export interface WorkSectionProps extends ContentfulContent {
-  title?: string;
+  titleEsp?: string;
+  titleEng?: string;
   experienceInfo?: WorkField[];
 }
 
@@ -28,7 +30,8 @@ export interface FooterProps extends ContentfulContent {
 }
 
 export interface AboutSectionProps extends ContentfulContent {
-  title?: string;
+  titleEng?: string;
+  titleEsp?: string;
   image?: ImageProps;
   cvButton?: ButtonProps;
   description?: RichTextProps;
@@ -47,7 +50,8 @@ export interface ImageProps extends MediaWrapperProps {
 }
 
 export interface ButtonProps extends ContentfulContent {
-  label?: string;
+  labelEsp: string;
+  labelEng: string;
   actionType?: 'self' | 'blank';
   actionUrl?: string;
   isPrimary?: boolean;

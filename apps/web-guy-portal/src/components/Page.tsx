@@ -50,7 +50,7 @@ const Page = () => {
   }, []);
 
   return (
-    <LanguageProvider>
+    <LanguageProvider className="grid grid-cols-4 mx-10">
       <Header {...page?.header}>
         <NavBar categories={page?.header?.categories} languajes={page?.header?.languajes} />
       </Header>
