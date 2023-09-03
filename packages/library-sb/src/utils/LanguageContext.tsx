@@ -3,6 +3,7 @@ import type { Dispatch, SetStateAction } from 'react';
 
 interface LanguageProps {
   children: React.ReactNode;
+  className: string;
 }
 
 interface LanguageContextProps {
@@ -12,11 +13,11 @@ interface LanguageContextProps {
 
 const LanguageContext = React.createContext<LanguageContextProps>({});
 
-function LanguageProvider({ children }: LanguageProps) {
+function LanguageProvider({ children, className }: LanguageProps) {
   const [language, setLanguage] = useState(() => localStorage.getItem('language') || 'ENG');
 
   return (
-    <div className="grid grid-cols-4 mx-10">
+    <div className={className}>
       <LanguageContext.Provider value={{ language, setLanguage }}>{children}</LanguageContext.Provider>
     </div>
   );

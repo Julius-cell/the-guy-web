@@ -1,6 +1,10 @@
+import { useContext } from 'react';
+import { LanguageContext } from '../../main';
 import type { ButtonProps } from '../../types/components-type-props';
 
-export const Button = ({ label, isPrimary = true, className = 'w-full' }: ButtonProps) => {
+export const Button = ({ labelEng, labelEsp, isPrimary = true, className = 'w-full' }: ButtonProps) => {
+  const { language } = useContext(LanguageContext);
+
   return (
     <button
       type="button"
@@ -13,7 +17,7 @@ export const Button = ({ label, isPrimary = true, className = 'w-full' }: Button
       }
     `}
     >
-      {label}
+      {language === 'ENG' ? labelEng : labelEsp}
     </button>
   );
 };
