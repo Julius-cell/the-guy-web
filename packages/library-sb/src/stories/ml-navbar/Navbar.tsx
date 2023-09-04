@@ -15,11 +15,13 @@ export const NavBar = ({ categories, languajes }: NavBarProps) => {
   const { setLanguage } = useContext(LanguageContext);
 
   const handleClick = (index: number) => {
-    if (!index) {
-      setLanguage('ESP');
-      return;
+    if (setLanguage) {
+      if (!index) {
+        setLanguage('ESP');
+        return;
+      }
+      setLanguage('ENG');
     }
-    setLanguage('ENG');
   };
 
   return (
