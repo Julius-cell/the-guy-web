@@ -42,7 +42,7 @@ export const CollapsibleContainer = ({
       </div>
       <div id={elementId} data-collapsed={true} className="transition-all overflow-hidden px-4 py-2 mt-2 h-0">
         <RichText className="md:hidden mt-10" {...detailsMobile} />
-        <RichText className="hidden mt-10" {...detailsDesktop} />
+        <RichText className="hidden md:block mt-10" {...detailsDesktop} />
       </div>
     </div>
   );
