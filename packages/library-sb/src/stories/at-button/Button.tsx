@@ -1,11 +1,15 @@
+import { useContext } from 'react';
+import { LanguageContext } from '../../main';
 import type { ButtonProps } from '../../types/components-type-props';
 
-export const Button = ({ label, isPrimary = true }: ButtonProps) => {
+export const Button = ({ labelEng, labelEsp, isPrimary = true, className = 'w-full' }: ButtonProps) => {
+  const { language } = useContext(LanguageContext);
+
   return (
     <button
       type="button"
       className={`
-      w-full rounded-md p-10 transition
+      rounded-3xl p-10 px-15 transition ${className}
       ${
         isPrimary
           ? 'bg-blue hover:bg-pink text-white hover:drop-shadow-md hover:scale-105'
@@ -13,7 +17,7 @@ export const Button = ({ label, isPrimary = true }: ButtonProps) => {
       }
     `}
     >
-      {label}
+      {language === 'ENG' ? labelEng : labelEsp}
     </button>
   );
 };

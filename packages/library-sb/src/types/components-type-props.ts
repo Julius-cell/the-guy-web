@@ -2,39 +2,47 @@ import type { ContentfulContent, MediaWrapperProps } from './contentful-types';
 import type { Document } from '@contentful/rich-text-types';
 
 export interface ModulesComponents {
-  [key: string]: React.ComponentType<CardProps | RichTextProps | ExperienceSectionProps>;
+  [key: string]: React.ComponentType<RichTextProps | WorkSectionProps>;
 }
 
 export interface HeaderProps extends ContentfulContent {
+  title?: string;
+  subTitleEsp?: string;
+  subTitleEng?: string;
   categories?: LinkProps[];
-  hero?: HeroSectionProps;
   languajes?: MediaWrapperProps[];
+  rrss?: LinkProps[];
+  children?: React.ReactNode;
 }
 
-export interface HeroSectionProps extends ContentfulContent {
-  heroTitle?: string;
-  description?: string;
-  heroAssets?: MediaWrapperProps[];
+export interface WorkSectionProps extends ContentfulContent {
+  titleEsp?: string;
+  titleEng?: string;
+  experienceInfo?: WorkField[];
 }
 
-export interface CardProps extends ContentfulContent {
-  cardTitle?: string;
-  descriptionText?: Document;
-  link?: string;
-  image?: MediaWrapperProps;
-  personDetails?: Person;
+export interface CollapsibleContainerProps extends WorkField {
+  index: number;
 }
 
-export interface ExperienceSectionProps extends ContentfulContent {
-  name?: string;
-  workFields?: WorkField[];
+export interface FooterProps extends ContentfulContent {
+  rrss?: LinkProps[];
+}
+
+export interface AboutSectionProps extends ContentfulContent {
+  titleEng?: string;
+  titleEsp?: string;
+  image?: ImageProps;
+  cvButton?: ButtonProps;
+  description?: RichTextProps;
 }
 
 export interface LinkProps extends ContentfulContent {
   label?: string;
-  actionType?: string;
+  isBlank?: boolean;
   actionUrl?: string;
-  subLinks?: LinkProps[];
+  image?: ImageProps;
+  children?: React.ReactNode;
 }
 
 export interface ImageProps extends MediaWrapperProps {
@@ -42,33 +50,27 @@ export interface ImageProps extends MediaWrapperProps {
 }
 
 export interface ButtonProps extends ContentfulContent {
-  label?: string;
+  labelEsp?: string;
+  labelEng?: string;
   actionType?: 'self' | 'blank';
   actionUrl?: string;
   isPrimary?: boolean;
+  className?: string;
   onClick?: () => void;
 }
 
 export interface RichTextProps extends ContentfulContent {
-  descriptionText?: Document | undefined;
+  espText?: Document | undefined;
+  ingText?: Document | undefined;
   className?: string;
 }
 
-interface Person extends ContentfulContent {
-  name?: string;
-  address?: string;
-  age?: number;
-  experience?: string;
-  phone?: string;
-  links?: LinkProps[];
-}
-
 export interface WorkField extends ContentfulContent {
-  name?: string;
-  workDetails?: RichTextProps;
-  workDetailsMobile?: RichTextProps;
+  workTitle?: string;
   startDate?: string;
   endDate?: string;
+  detailsMobile?: RichTextProps;
+  detailsDesktop?: RichTextProps;
 }
 
 export interface IconProps {

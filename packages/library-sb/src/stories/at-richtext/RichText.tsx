@@ -1,5 +1,7 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
+import { useContext } from 'react';
+import { LanguageContext } from '../../utils/LanguageContext';
 import type { RichTextProps } from '../../types/components-type-props';
 import type { NodeData, Block, Text } from '@contentful/rich-text-types';
 
@@ -12,7 +14,7 @@ const options = {
         return (
           <>
             <p>{value}</p>
-            <br />
+            {nodeDocument.content.length > 1 && <br />}
           </>
         );
       }
@@ -20,10 +22,15 @@ const options = {
   },
 };
 
-export const RichText = ({ descriptionText, className = '' }: RichTextProps) => {
+export const RichText = ({ className = '', ...props }: RichTextProps) => {
+  const { language } = useContext(LanguageContext);
+
   let richTextDescription;
-  if (descriptionText) {
-    richTextDescription = documentToReactComponents(descriptionText, options);
+
+  if (language === 'ESP' && props.espText) {
+    richTextDescription = documentToReactComponents(props.espText, options);
+  } else if (language === 'ENG' && props.ingText) {
+    richTextDescription = documentToReactComponents(props.ingText, options);
   }
-  return <div className={`text-justify ${className}`}>{richTextDescription}</div>;
+  return <div className={`${className}`}>{richTextDescription}</div>;
 };

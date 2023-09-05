@@ -8,6 +8,10 @@ export const getPage = async (): Promise<ContentfulPage | undefined> => {
     include: 10,
   });
 
+  if (!localStorage.getItem('language')) {
+    localStorage.setItem('language', 'ESP');
+  }
+
   const pageEntry = entries.items[0];
 
   if (!pageEntry) return undefined;

@@ -14,9 +14,8 @@
 
 @layer base {
   body {
-    @apply bg-primary-gradient;
-    @apply bg-dark-purple;
-    @apply text-white;
+    @apply bg-white;
+    @apply text-black;
   }
   h1, span {
     @apply font-oswald;
