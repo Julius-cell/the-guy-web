@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { LanguageContext } from '../../main';
 import { Image } from '../at-image/Image';
-import { Link } from '../at-link/Link';
+import { LinkAnchor } from '../at-link/Link';
 
 import type { HeaderProps } from '../../types/components-type-props';
 
@@ -23,9 +23,9 @@ export const Header = ({ title, subTitleEng, subTitleEsp, rrss = [], children }:
         <p>{language === 'ENG' ? 'Get in touch with me' : 'Contáctame'}</p>
         <ul className="col-start-2 col-span-2 flex gap-x-10 h-1/5 justify-center">
           {rrss.map((elem, i) => (
-            <Link key={i} {...elem}>
+            <LinkAnchor key={i} {...elem}>
               <Image className="h-20" desktopAsset={elem.image?.desktopAsset} />
-            </Link>
+            </LinkAnchor>
           ))}
         </ul>
       </div>

@@ -1,15 +1,8 @@
 import { useContext } from 'react';
 import { LanguageContext } from '../../utils/LanguageContext';
 import { Image } from '../at-image/Image';
-import { Link } from '../at-link/Link';
-
-import type { LinkProps } from '../../types/components-type-props';
-import type { MediaWrapperProps } from '../../types/contentful-types';
-
-interface NavBarProps {
-  categories?: LinkProps[];
-  languajes?: MediaWrapperProps[];
-}
+import { LinkAnchor } from '../at-link/Link';
+import type { NavBarProps } from '../../main';
 
 export const NavBar = ({ categories, languajes }: NavBarProps) => {
   const { setLanguage } = useContext(LanguageContext);
@@ -30,7 +23,7 @@ export const NavBar = ({ categories, languajes }: NavBarProps) => {
         <p>Julio Cid</p>
       </div>
       <ul className="hidden md:block col-start-2 col-span-2 space-x-20 justify-self-center">
-        {categories?.map((categorie, index) => <Link key={index} {...categorie} />)}
+        {categories?.map((categorie, index) => <LinkAnchor key={index} {...categorie} />)}
       </ul>
       <div className="col-start-4 flex w-fit bg-white rounded-lg border-2 justify-self-end">
         {languajes?.map((languaje, index) => {
