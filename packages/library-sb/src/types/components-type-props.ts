@@ -1,4 +1,4 @@
-import type { ContentfulContent, MediaWrapperProps } from './contentful-types';
+import type { ContentfulAsset, ContentfulContent, MediaWrapperProps } from './contentful-types';
 import type { Document } from '@contentful/rich-text-types';
 
 export interface ModulesComponents {
@@ -9,10 +9,15 @@ export interface HeaderProps extends ContentfulContent {
   title?: string;
   subTitleEsp?: string;
   subTitleEng?: string;
-  categories?: LinkProps[];
+  categories?: LinkAnchorProps[];
   languajes?: MediaWrapperProps[];
-  rrss?: LinkProps[];
+  rrss?: LinkAnchorProps[];
   children?: React.ReactNode;
+}
+
+export interface NavBarProps {
+  categories?: LinkAnchorProps[];
+  languajes?: MediaWrapperProps[];
 }
 
 export interface WorkSectionProps extends ContentfulContent {
@@ -26,7 +31,7 @@ export interface CollapsibleContainerProps extends WorkField {
 }
 
 export interface FooterProps extends ContentfulContent {
-  rrss?: LinkProps[];
+  rrss?: LinkAnchorProps[];
 }
 
 export interface AboutSectionProps extends ContentfulContent {
@@ -37,10 +42,10 @@ export interface AboutSectionProps extends ContentfulContent {
   description?: RichTextProps;
 }
 
-export interface LinkProps extends ContentfulContent {
+export interface LinkAnchorProps extends ContentfulContent {
   label?: string;
-  isBlank?: boolean;
-  actionUrl?: string;
+  actionType?: '_self' | '_blank';
+  actionUrl: string;
   image?: ImageProps;
   children?: React.ReactNode;
 }
@@ -52,11 +57,12 @@ export interface ImageProps extends MediaWrapperProps {
 export interface ButtonProps extends ContentfulContent {
   labelEsp?: string;
   labelEng?: string;
-  actionType?: 'self' | 'blank';
+  actionType?: '_self' | '_blank';
   actionUrl?: string;
   isPrimary?: boolean;
   className?: string;
   onClick?: () => void;
+  fileAssets?: ContentfulAsset[];
 }
 
 export interface RichTextProps extends ContentfulContent {

@@ -39,8 +39,14 @@
 
   p,
   a,
+  li,
   button {
     @apply font-quattrocento;
+  }
+
+  .work>ul {
+    @apply list-disc;
+    @apply list-inside;
   }
 }
 

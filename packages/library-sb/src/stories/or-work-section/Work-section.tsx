@@ -10,7 +10,7 @@ export const WorkSection = ({ titleEng, titleEsp, experienceInfo }: WorkSectionP
   const currentText = language === 'ENG' ? ' Present' : ' Actualidad';
 
   return (
-    <div className="col-span-full">
+    <div id="work" className="col-span-full">
       <h2 className="text-center">{language === 'ENG' ? titleEng : titleEsp}</h2>
       <ul className="border-l-2 border-l-pink mt-20 relative grid gap-y-20">
         {experienceInfo?.map((work: WorkField, i: number) => (
