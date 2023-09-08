@@ -9,7 +9,7 @@ export const AboutSection = ({ titleEng, titleEsp, description, image, cvButton 
   const { language } = useContext(LanguageContext);
 
   return (
-    <div className="text-center grid md:grid-cols-2">
+    <div id="about" className="text-center grid md:grid-cols-2">
       <div className="grid gap-y-30 md:px-1/10">
         <h2>{language === 'ENG' ? titleEng : titleEsp}</h2>
         <RichText ingText={description?.ingText} espText={description?.espText} />

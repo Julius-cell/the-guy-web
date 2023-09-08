@@ -19,6 +19,11 @@ const options = {
         );
       }
     },
+    [BLOCKS.LIST_ITEM]: (node: NodeData) => {
+      const nodeDocument = node.content[0] as Block;
+      const content = nodeDocument.content[0] as Text;
+      return <li>{content.value}</li>;
+    },
   },
 };
 
