@@ -18,6 +18,15 @@ export default {
       25: '25px',
       30: '30px',
     },
+    colors: {
+      white: '#ffffff',
+      'dark-blue': '#1A1F47',
+      'dark-purple': '#2c1c42',
+      pink: '#D83F87',
+      blue: '#3544CF',
+      purple: '#44318D',
+      black: '#000000'
+    },
     screens: {
       sm: '360px',
       md: '680px',

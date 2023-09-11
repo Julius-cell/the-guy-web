@@ -57,7 +57,6 @@ export interface ImageProps extends MediaWrapperProps {
 export interface ButtonProps extends ContentfulContent {
   labelEsp?: string;
   labelEng?: string;
-  actionType?: '_self' | '_blank';
   actionUrl?: string;
   isPrimary?: boolean;
   className?: string;
