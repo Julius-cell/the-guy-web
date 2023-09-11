@@ -17,67 +17,10 @@
     @apply bg-white;
     @apply text-black;
   }
-  h1, span {
-    @apply font-oswald;
-    @apply font-extrabold;
-    @apply text-xl;
-  }
-  h2 {
-    @apply font-oswald;
-    @apply font-semibold;
-    @apply text-xl;
-  }
-  h3 {
-    @apply font-oswald;
-    @apply font-medium;
-    @apply text-base;
-  }
 
-  span {
-    @apply text-pink;
-  }
-
-  p,
-  a,
-  li,
   button {
     @apply font-quattrocento;
   }
 
-  .work>ul {
-    @apply list-disc;
-    @apply list-inside;
-  }
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.7);
-  opacity: 0.5;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #8165a6;
-  border-radius: 5px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #d83f87;
-}
-
-@media (max-width: 640px) {
-  /* For Webkit based browsers (e.g., Chrome, Safari) */
-  ::-webkit-scrollbar {
-    width: 0px;
-    display: none;
-    /* For Firefox */
-    scrollbar-width: none;
-  }
-}

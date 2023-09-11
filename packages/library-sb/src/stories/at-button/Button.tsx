@@ -1,24 +1,12 @@
-import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LanguageContext } from '../../main';
 import type { ButtonProps } from '../../types/components-type-props';
 
-export const Button = ({
-  labelEng,
-  labelEsp,
-  isPrimary = true,
-  className = 'w-full',
-  fileAssets = [],
-}: ButtonProps) => {
-  const { language } = useContext(LanguageContext);
+export const Button = ({ labelEng, labelEsp, actionUrl, isPrimary = true, className = 'w-full' }: ButtonProps) => {
+  const language = 'ENG';
   const navigate = useNavigate();
-  let fileAsset: string | undefined;
-  if (fileAssets.length) {
-    fileAsset = language === 'ENG' ? fileAssets[0]?.file?.url : fileAssets[1]?.file?.url;
-  }
 
   const handleClick = () => {
-    navigate(fileAsset || '');
+    navigate(actionUrl || '#');
   };
 
   return (
