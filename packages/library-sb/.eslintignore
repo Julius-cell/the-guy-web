@@ -3,5 +3,5 @@ dist/
 *.js
 *.json
 vite.config.ts
-src/stories/**/*.stories.*
+src/stories/**/*.stories.ts
 storybook-static

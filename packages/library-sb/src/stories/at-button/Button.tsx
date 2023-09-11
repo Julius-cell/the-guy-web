@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { LanguageContext } from '../../main';
 import type { ButtonProps } from '../../types/components-type-props';
 
@@ -9,16 +9,23 @@ export const Button = ({
   isPrimary = true,
   className = 'w-full',
   fileAssets = [],
-  actionType,
 }: ButtonProps) => {
   const { language } = useContext(LanguageContext);
-  const fileAsset = language === 'ENG' ? fileAssets[0].file?.url : fileAssets[1].file?.url;
+  const navigate = useNavigate();
+  let fileAsset: string | undefined;
+  if (fileAssets.length) {
+    fileAsset = language === 'ENG' ? fileAssets[0]?.file?.url : fileAssets[1]?.file?.url;
+  }
+
+  const handleClick = () => {
+    navigate(fileAsset || '');
+  };
 
   return (
-    <Link to={fileAsset || ''} target={actionType}>
-      <button
-        type="button"
-        className={`
+    <button
+      type="button"
+      onClick={handleClick}
+      className={`
       rounded-3xl p-10 px-15 transition ${className}
       ${
         isPrimary
@@ -26,9 +33,8 @@ export const Button = ({
           : 'hover:bg-pink hover:text-white border-2 border-pink'
       }
     `}
-      >
-        {language === 'ENG' ? labelEng : labelEsp}
-      </button>
-    </Link>
+    >
+      {language === 'ENG' ? labelEng : labelEsp}
+    </button>
   );
 };
