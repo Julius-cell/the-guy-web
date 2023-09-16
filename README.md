@@ -21,13 +21,27 @@ VITE_CONTENTFUL_DELIVERY_TOKEN=
 
 - If you want to develop your components in isolation, take the Button.stories.ts file as an example.
 
+### Versioning (CI)
+
+- Go to your repository settings > Actions > General
+- In Workflow permissions check Read and write permissions (in case your pipe creates some file)
+- Create an NPM Account
+- Verify your account with 2FA
+- Go to Access Token and create a new one and select the type public
+- In your repository add a secret NPM_TOKEN and add the access token created
+- Before you add changes to your main branch run the following command:
+```
+npx changeset
+```
+- Commit your changes and the release workflow detect when the main branch is being pushed
+- After that it will create a PR that you need to confirm if everything is alright
 ## How to use scripts?
 
 - `npm run build`: Runs the build script in every package or app that you have in your monorepo.
 - `npm run dev`: Runs the dev script in every package or app that you have in your monorepo.
 - `npm run lint`: Runs Eslint on all files in your project directory and its subdirectories. Also overwrite the file with the proper format (--fix flag).
 - `npm run format`: Runs Prettier on all files in your project directory and its subdirectories matching the extensions .ts, .tsx, and .md. Also overwrite the file with the proper format (--write flag).
-- `publish-packages`: TODO know how to use it properly and consistenly
+- `publish-packages`: It run when the workflow release-version trigger
 
 ## Apps and Packages
 
@@ -102,3 +116,4 @@ Learn more about the power of Turborepo:
 - [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
 - [Use react-router-dom with Storybook](https://storybook.js.org/addons/storybook-addon-react-router-v6)
+- [Workflow example repository changesets](https://github.com/changesets/changesets/actions/runs/5387436747/workflow)
