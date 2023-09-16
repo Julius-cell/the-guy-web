@@ -1,0 +1,42 @@
+name: Release
+run-name: ${{ github.actor }} is releasing a new versión 🚀
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Use pnpm '7'
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 7
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile=false
+        working-directory: ./apps/web-guy-portal
+
+      - name: Create Release
+        uses: changesets/action@v1
+        with:
+          # this expects you to have a script called release which does a build for your packages and calls changeset publish
+          version: npm run release
+          publish: npm run publish-packages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
