@@ -27,7 +27,7 @@ VITE_CONTENTFUL_DELIVERY_TOKEN=
 - In Workflow permissions check Read and write permissions (in case your pipe creates some file)
 - Create an NPM Account
 - Verify your account with 2FA
-- Go to Access Token and create a new one and select the type public
+- Go to Access Token and create a new one and select the type Publish
 - In your repository add a secret NPM_TOKEN and add the access token created
 - Before you add changes to your main branch run the following command:
 ```
