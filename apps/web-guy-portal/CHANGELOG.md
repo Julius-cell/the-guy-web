@@ -1,5 +1,12 @@
 # web-guy-portal
 
+## 3.0.1
+
+### Patch Changes
+
+- Updated dependencies [5012929]
+  - library-sb@3.1.0
+
 ## 3.0.0
 
 ### Major Changes
