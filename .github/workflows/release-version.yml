@@ -34,6 +34,8 @@ jobs:
       - name: Create Release
         uses: changesets/action@v1
         with:
+          title: 'chore: release package(s)'
+          commit: 'chore: release package(s)'
           # this expects you to have a script called release which does a build for your packages and calls changeset publish
           version: npm run release
           publish: npm run publish-packages
