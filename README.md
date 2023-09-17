@@ -25,6 +25,7 @@ VITE_CONTENTFUL_DELIVERY_TOKEN=
 
 - Go to your repository settings > Actions > General
 - In Workflow permissions check Read and write permissions (in case your pipe creates some file)
+- Also check Allow Github Actions to create and approve pull requests
 - Create an NPM Account
 - Verify your account with 2FA
 - Go to Access Token and create a new one and select the type Publish
